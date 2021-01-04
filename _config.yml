@@ -1,5 +1,9 @@
 title:              closetotheworld devlog
+<<<<<<< HEAD
 email:              hwr0450@gmail.com
+=======
+email:              your-email@example.com
+>>>>>>> af874a0133e5136520899b260eeb3053bc7115e5
 description:        A Blog Theme by Start Bootstrap
 author:             Start Bootstrap
 baseurl:            ""
