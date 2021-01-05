@@ -1,16 +1,8 @@
-# main links
+
 main:
-  - title: "About"
-    url: /about/
-  - title: "Tech Post"
-    url: /categories/Tech/
-  - title: "My diary"
-    url: /categories/daily/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "Category"
+    url: /categories/
+  - title: "Tag"
+    url: /tags/
+  - title: "Post by Year"
+    url: /year-archive/

@@ -1,17 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-05T17:17:09+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">git블로그 시작!!!</title><link href="https://closetotheworld.github.io/daily/post/" rel="alternate" type="text/html" title="git블로그 시작!!!" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T17:00:00+09:00</updated><id>https://closetotheworld.github.io/daily/post</id><content type="html" xml:base="https://closetotheworld.github.io/daily/post/">&lt;p&gt;첫 블로그의 첫 글을 시작했따!&lt;/p&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">시작이다!</summary></entry><entry><title type="html">TCP와 UDP ?</title><link href="https://closetotheworld.github.io/tech/post2/" rel="alternate" type="text/html" title="TCP와 UDP ?" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T19:00:00+09:00</updated><id>https://closetotheworld.github.io/tech/post2</id><content type="html" xml:base="https://closetotheworld.github.io/tech/post2/">&lt;p&gt;####TCP&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;흐름제어와 오류제어를 수행하는 신뢰성있는 protocol. 연결성립에 3-way handshake,  해제에 4-way handshake 사용&lt;/p&gt;
-&lt;/blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-05T19:55:50+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">git블로그 시작!!!</title><link href="https://closetotheworld.github.io/daily/post/" rel="alternate" type="text/html" title="git블로그 시작!!!" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T17:00:00+09:00</updated><id>https://closetotheworld.github.io/daily/post</id><content type="html" xml:base="https://closetotheworld.github.io/daily/post/">&lt;p&gt;첫 블로그의 첫 글을 시작했따!&lt;/p&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">시작이다!</summary></entry><entry><title type="html">TCP와 UDP ?</title><link href="https://closetotheworld.github.io/network/post2/" rel="alternate" type="text/html" title="TCP와 UDP ?" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T19:00:00+09:00</updated><id>https://closetotheworld.github.io/network/post2</id><content type="html" xml:base="https://closetotheworld.github.io/network/post2/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;개인적으로 정리한 의견임다!&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;####UDP&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;신뢰성 없는 프로토콜을 사용해도 될 때. 무차별적으로 보내기만 한다. 응답을 요구하지 않음. 주로 동영상, 스트리밍서비스에 사용한다.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Wonryang Heo</name></author><category term="Tech" /><category term="CS" /><category term="Network" /><summary type="html">CS 기초중 하나인 TCP와 UDP에 대해 알아보자</summary></entry><entry><title type="html">TCP와 UDP ?</title><link href="https://closetotheworld.github.io/tech/post3/" rel="alternate" type="text/html" title="TCP와 UDP ?" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T19:00:00+09:00</updated><id>https://closetotheworld.github.io/tech/post3</id><content type="html" xml:base="https://closetotheworld.github.io/tech/post3/">&lt;p&gt;###TCP&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;흐름제어와 오류제어를 수행하는 신뢰성있는 protocol. 연결성립에 3-way handshake,  해제에 4-way handshake 사용&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h3 id=&quot;네트워크에서의-단어들&quot;&gt;네트워크에서의 단어들&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로토콜&lt;/code&gt; -&amp;gt; 네트워크의 통신 규칙&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;네트워크 아키텍처&lt;/code&gt; -&amp;gt; 프로토콜 여러개를 조합한 것&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;호스트&lt;/code&gt; -&amp;gt; TCP/IP로 통신하는 각종 네트워크 기기 전반.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;###UDP&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;신뢰성 없는 프로토콜을 사용해도 될 때. 무차별적으로 보내기만 한다. 응답을 요구하지 않음. 주로 동영상, 스트리밍서비스에 사용한다.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Wonryang Heo</name></author><category term="Tech" /><category term="CS" /><category term="Network" /><summary type="html">CS 기초중 하나인 TCP와 UDP에 대해 알아보자</summary></entry></feed>
+&lt;h3 id=&quot;그래서-tcp가-뭔데&quot;&gt;그래서 TCP가 뭔데?&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;신뢰성 있는 바이트 스트림을 &lt;u&gt;전송하고 받는 것&lt;/u&gt;&lt;/li&gt;
+  &lt;li&gt;소켓이라는 종단점을 생성함으로서 이루어짐.&lt;/li&gt;
+  &lt;li&gt;연결 설정
+    &lt;ul&gt;
+      &lt;li&gt;3-way handshake&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/103637860-73674f00-4f8f-11eb-9952-c1374422a947.png&quot; alt=&quot;image&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;전이중(전송이 양 방향으로 가능), 점대점(2개의 종단점) 방식.&lt;/li&gt;
+  &lt;li&gt;멀티캐스팅, 브로드캐스팅 미지원&lt;/li&gt;
+  &lt;li&gt;종료
+    &lt;ul&gt;
+      &lt;li&gt;4-way handshake&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/103637872-78c49980-4f8f-11eb-9bb1-596a84ef3c26.png&quot; alt=&quot;image&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;그럼-udp는&quot;&gt;그럼 UDP는?&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;비연결형 프로토콜&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;흐름제어, 오류제어, 손상세그먼트의 수신에 대한 &lt;u&gt;재전송을 하지 않음&lt;/u&gt;&lt;/li&gt;
+  &lt;li&gt;대표적으로 DNS가 있다! (가벼워서)&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Network" /><category term="CS" /><category term="interview" /><summary type="html">개인적으로 정리한 의견임다! 네트워크에서의 단어들 프로토콜 -&amp;gt; 네트워크의 통신 규칙 네트워크 아키텍처 -&amp;gt; 프로토콜 여러개를 조합한 것 호스트 -&amp;gt; TCP/IP로 통신하는 각종 네트워크 기기 전반. 그래서 TCP가 뭔데? 신뢰성 있는 바이트 스트림을 전송하고 받는 것 소켓이라는 종단점을 생성함으로서 이루어짐. 연결 설정 3-way handshake 전이중(전송이 양 방향으로 가능), 점대점(2개의 종단점) 방식. 멀티캐스팅, 브로드캐스팅 미지원 종료 4-way handshake 그럼 UDP는? 비연결형 프로토콜 흐름제어, 오류제어, 손상세그먼트의 수신에 대한 재전송을 하지 않음 대표적으로 DNS가 있다! (가벼워서)</summary></entry></feed>

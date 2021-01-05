@@ -1,0 +1,36 @@
+I"�<p class="notice--warning"><strong>개인적으로 정리한 의견임다!</strong></p>
+
+<h3 id="네트워크에서의-단어들">네트워크에서의 단어들</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">프로토콜</code> -&gt; 네트워크의 통신 규칙</li>
+  <li><code class="language-plaintext highlighter-rouge">네트워크 아키텍처</code> -&gt; 프로토콜 여러개를 조합한 것</li>
+  <li><code class="language-plaintext highlighter-rouge">호스트</code> -&gt; TCP/IP로 통신하는 각종 네트워크 기기 전반.</li>
+</ul>
+
+<h3 id="그래서-tcp가-뭔데">그래서 TCP가 뭔데?</h3>
+<ul>
+  <li>신뢰성 있는 바이트 스트림을 <u>전송하고 받는 것</u></li>
+  <li>소켓이라는 종단점을 생성함으로서 이루어짐.</li>
+  <li>연결 설정
+    <ul>
+      <li>3-way handshake<br />
+<img src="https://user-images.githubusercontent.com/37994634/103637860-73674f00-4f8f-11eb-9952-c1374422a947.png" alt="image" /></li>
+    </ul>
+  </li>
+  <li>전이중(전송이 양 방향으로 가능), 점대점(2개의 종단점) 방식.</li>
+  <li>멀티캐스팅, 브로드캐스팅 미지원</li>
+  <li>종료
+    <ul>
+      <li>4-way handshake<br />
+<img src="https://user-images.githubusercontent.com/37994634/103637872-78c49980-4f8f-11eb-9bb1-596a84ef3c26.png" alt="image" /></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="그럼-udp는">그럼 UDP는?</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">비연결형 프로토콜</code></li>
+  <li>흐름제어, 오류제어, 손상세그먼트의 수신에 대한 <u>재전송을 하지 않음</u></li>
+  <li>대표적으로 DNS가 있다! (가벼워서)</li>
+</ul>
+:ET
