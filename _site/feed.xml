@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-05T07:57:06+09:00</updated><id>/feed.xml</id><title type="html">Site Title</title><subtitle>An amazing website.</subtitle><author><name>Your Name</name></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-05T10:27:43+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">git블로그 시작!!!</title><link href="https://closetotheworld.github.io/daily/post/" rel="alternate" type="text/html" title="git블로그 시작!!!" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T17:00:00+09:00</updated><id>https://closetotheworld.github.io/daily/post</id><content type="html" xml:base="https://closetotheworld.github.io/daily/post/">&lt;p&gt;첫 블로그의 첫 글을 시작했따!&lt;/p&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">시작이다!</summary></entry><entry><title type="html">TCP와 UDP ?</title><link href="https://closetotheworld.github.io/tech/post2/" rel="alternate" type="text/html" title="TCP와 UDP ?" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T19:00:00+09:00</updated><id>https://closetotheworld.github.io/tech/post2</id><content type="html" xml:base="https://closetotheworld.github.io/tech/post2/">&lt;p&gt;####TCP&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;흐름제어와 오류제어를 수행하는 신뢰성있는 protocol. 연결성립에 3-way handshake,  해제에 4-way handshake 사용&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;####UDP&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;신뢰성 없는 프로토콜을 사용해도 될 때. 무차별적으로 보내기만 한다. 응답을 요구하지 않음. 주로 동영상, 스트리밍서비스에 사용한다.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Wonryang Heo</name></author><category term="Tech" /><category term="CS" /><category term="Network" /><summary type="html">CS 기초중 하나인 TCP와 UDP에 대해 알아보자</summary></entry><entry><title type="html">TCP와 UDP ?</title><link href="https://closetotheworld.github.io/tech/post3/" rel="alternate" type="text/html" title="TCP와 UDP ?" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T19:00:00+09:00</updated><id>https://closetotheworld.github.io/tech/post3</id><content type="html" xml:base="https://closetotheworld.github.io/tech/post3/">&lt;p&gt;###TCP&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;흐름제어와 오류제어를 수행하는 신뢰성있는 protocol. 연결성립에 3-way handshake,  해제에 4-way handshake 사용&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;###UDP&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;신뢰성 없는 프로토콜을 사용해도 될 때. 무차별적으로 보내기만 한다. 응답을 요구하지 않음. 주로 동영상, 스트리밍서비스에 사용한다.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Wonryang Heo</name></author><category term="Tech" /><category term="CS" /><category term="Network" /><summary type="html">CS 기초중 하나인 TCP와 UDP에 대해 알아보자</summary></entry></feed>

@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>/</loc>
+<loc>https://closetotheworld.github.io/daily/post/</loc>
+<lastmod>2021-01-05T17:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>https://closetotheworld.github.io/tech/post2/</loc>
+<lastmod>2021-01-05T19:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>https://closetotheworld.github.io/tech/post3/</loc>
+<lastmod>2021-01-05T19:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>https://closetotheworld.github.io/about/</loc>
+</url>
+<url>
+<loc>https://closetotheworld.github.io/categories/</loc>
+</url>
+<url>
+<loc>https://closetotheworld.github.io/categories/daily/</loc>
+</url>
+<url>
+<loc>https://closetotheworld.github.io/</loc>
+</url>
+<url>
+<loc>https://closetotheworld.github.io/tags/</loc>
+</url>
+<url>
+<loc>https://closetotheworld.github.io/categories/Tech/</loc>
 </url>
 </urlset>
