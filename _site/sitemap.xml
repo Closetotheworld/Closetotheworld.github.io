@@ -9,6 +9,10 @@
 <lastmod>2021-01-05T19:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>https://closetotheworld.github.io/golang/post3/</loc>
+<lastmod>2021-01-05T19:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>https://closetotheworld.github.io/about/</loc>
 </url>
 <url>
@@ -16,6 +20,9 @@
 </url>
 <url>
 <loc>https://closetotheworld.github.io/categories/daily</loc>
+</url>
+<url>
+<loc>https://closetotheworld.github.io/categories/golang</loc>
 </url>
 <url>
 <loc>https://closetotheworld.github.io/categories/network</loc>

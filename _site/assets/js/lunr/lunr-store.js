@@ -10,4 +10,10 @@ var store = [{
         "tags": ["CS","interview"],
         "url": "https://closetotheworld.github.io/network/post2/",
         "teaser": null
+      },{
+        "title": "Golang와의 첫 만남 - Go series(1)",
+        "excerpt":"학습 한 내용 Go의 특징 Golang은? 고루틴을 활용한 동시성 프로그래밍 Golang의 특징 개발속도 Java나 C는 컴파일러들이 전체 라이브러리의 의존성을 탐색하지만 GO 컴파일러는 직접참조 라이브러리의 의존성만 해석함. 동시성 Golang의 강력한 기능 중 하나. 고루틴(goroutine)은 스레드와 유사하지만 더 적은 메모리를 소비하며 더 적은 양의 코드로 구현 가능. 프로그램의 진입점을 비롯하여 다른 고루틴과...","categories": ["Golang"],
+        "tags": ["language","tutorial"],
+        "url": "https://closetotheworld.github.io/golang/post3/",
+        "teaser": null
       }]

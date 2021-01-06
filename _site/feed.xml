@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-05T19:55:50+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">git블로그 시작!!!</title><link href="https://closetotheworld.github.io/daily/post/" rel="alternate" type="text/html" title="git블로그 시작!!!" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T17:00:00+09:00</updated><id>https://closetotheworld.github.io/daily/post</id><content type="html" xml:base="https://closetotheworld.github.io/daily/post/">&lt;p&gt;첫 블로그의 첫 글을 시작했따!&lt;/p&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">시작이다!</summary></entry><entry><title type="html">TCP와 UDP ?</title><link href="https://closetotheworld.github.io/network/post2/" rel="alternate" type="text/html" title="TCP와 UDP ?" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T19:00:00+09:00</updated><id>https://closetotheworld.github.io/network/post2</id><content type="html" xml:base="https://closetotheworld.github.io/network/post2/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;개인적으로 정리한 의견임다!&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-06T17:21:48+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">git블로그 시작!!!</title><link href="https://closetotheworld.github.io/daily/post/" rel="alternate" type="text/html" title="git블로그 시작!!!" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T17:00:00+09:00</updated><id>https://closetotheworld.github.io/daily/post</id><content type="html" xml:base="https://closetotheworld.github.io/daily/post/">&lt;p&gt;첫 블로그의 첫 글을 시작했따!&lt;/p&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">시작이다!</summary></entry><entry><title type="html">TCP와 UDP ?</title><link href="https://closetotheworld.github.io/network/post2/" rel="alternate" type="text/html" title="TCP와 UDP ?" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T19:00:00+09:00</updated><id>https://closetotheworld.github.io/network/post2</id><content type="html" xml:base="https://closetotheworld.github.io/network/post2/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;개인적으로 정리한 의견임다!&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;네트워크에서의-단어들&quot;&gt;네트워크에서의 단어들&lt;/h3&gt;
 &lt;ul&gt;
@@ -32,4 +32,52 @@
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;비연결형 프로토콜&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;흐름제어, 오류제어, 손상세그먼트의 수신에 대한 &lt;u&gt;재전송을 하지 않음&lt;/u&gt;&lt;/li&gt;
   &lt;li&gt;대표적으로 DNS가 있다! (가벼워서)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Network" /><category term="CS" /><category term="interview" /><summary type="html">개인적으로 정리한 의견임다! 네트워크에서의 단어들 프로토콜 -&amp;gt; 네트워크의 통신 규칙 네트워크 아키텍처 -&amp;gt; 프로토콜 여러개를 조합한 것 호스트 -&amp;gt; TCP/IP로 통신하는 각종 네트워크 기기 전반. 그래서 TCP가 뭔데? 신뢰성 있는 바이트 스트림을 전송하고 받는 것 소켓이라는 종단점을 생성함으로서 이루어짐. 연결 설정 3-way handshake 전이중(전송이 양 방향으로 가능), 점대점(2개의 종단점) 방식. 멀티캐스팅, 브로드캐스팅 미지원 종료 4-way handshake 그럼 UDP는? 비연결형 프로토콜 흐름제어, 오류제어, 손상세그먼트의 수신에 대한 재전송을 하지 않음 대표적으로 DNS가 있다! (가벼워서)</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Network" /><category term="CS" /><category term="interview" /><summary type="html">개인적으로 정리한 의견임다! 네트워크에서의 단어들 프로토콜 -&amp;gt; 네트워크의 통신 규칙 네트워크 아키텍처 -&amp;gt; 프로토콜 여러개를 조합한 것 호스트 -&amp;gt; TCP/IP로 통신하는 각종 네트워크 기기 전반. 그래서 TCP가 뭔데? 신뢰성 있는 바이트 스트림을 전송하고 받는 것 소켓이라는 종단점을 생성함으로서 이루어짐. 연결 설정 3-way handshake 전이중(전송이 양 방향으로 가능), 점대점(2개의 종단점) 방식. 멀티캐스팅, 브로드캐스팅 미지원 종료 4-way handshake 그럼 UDP는? 비연결형 프로토콜 흐름제어, 오류제어, 손상세그먼트의 수신에 대한 재전송을 하지 않음 대표적으로 DNS가 있다! (가벼워서)</summary></entry><entry><title type="html">Golang와의 첫 만남 - Go series(1)</title><link href="https://closetotheworld.github.io/golang/post3/" rel="alternate" type="text/html" title="Golang와의 첫 만남 - Go series(1)" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T19:00:00+09:00</updated><id>https://closetotheworld.github.io/golang/post3</id><content type="html" xml:base="https://closetotheworld.github.io/golang/post3/">&lt;p&gt;&lt;strong&gt;학습 한 내용&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class=&quot;notice--warning&quot;&gt;
+  &lt;li&gt;Go의 특징&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;golang은&quot;&gt;Golang은?&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고루틴&lt;/code&gt;을 활용한 동시성 프로그래밍
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;golang의-특징&quot;&gt;Golang의 특징&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;개발속도
+    &lt;ul&gt;
+      &lt;li&gt;Java나 C는 컴파일러들이 전체 라이브러리의 의존성을 탐색하지만 GO 컴파일러는 직접참조 라이브러리의 의존성만 해석함.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;동시성
+    &lt;ul&gt;
+      &lt;li&gt;Golang의 강력한 기능 중 하나.&lt;/li&gt;
+      &lt;li&gt;고루틴(goroutine)은 스레드와 유사하지만 더 적은 메모리를 소비하며 더 적은 양의 코드로 구현 가능.
+        &lt;ul&gt;
+          &lt;li&gt;프로그램의 진입점을 비롯하여 다른 고루틴과 함께 동시에 실행되는 함수.&lt;/li&gt;
+          &lt;li&gt;Go는 여러 개의 고루틴이 하나의 스레드에서 동작한다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;채널(channel)은 내장된 동기화 기능을 이용해서 고루틴 간의 형식화된 메세지를 공유할 수 있는 데이터 구조이다.
+        &lt;ul&gt;
+          &lt;li&gt;공유 메모리 접근을 허용하는 프로그래밍 언어에서 발생하는 문제들을 손쉽게 피할 수 있음.&lt;/li&gt;
+          &lt;li&gt;동시에 발생하는 수정요청으로부터 데이터를 안전하게 보호하기 위한 패턴을 제공함.&lt;/li&gt;
+          &lt;li&gt;채널을 통해 어느 한 시점에 하나의 고루틴만이 데이터를 수정할 수 있는 패턴임.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;타입 시스템&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;메모리 관리(GC)
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;요약&quot;&gt;요약&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Golang은 모던하고 빠르며 강력한 표준 라이브러리를 제공하는 언어이다.&lt;br /&gt;
+Go는 동시성 기능을 자체적으로 내장한다.&lt;br /&gt;
+Go는 코드 재사용을 위한 Block으로서 인터페이스를 활용한다.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Wonryang Heo</name></author><category term="Golang" /><category term="language" /><category term="tutorial" /><summary type="html">학습 한 내용 Go의 특징 Golang은? 고루틴을 활용한 동시성 프로그래밍 Golang의 특징 개발속도 Java나 C는 컴파일러들이 전체 라이브러리의 의존성을 탐색하지만 GO 컴파일러는 직접참조 라이브러리의 의존성만 해석함. 동시성 Golang의 강력한 기능 중 하나. 고루틴(goroutine)은 스레드와 유사하지만 더 적은 메모리를 소비하며 더 적은 양의 코드로 구현 가능. 프로그램의 진입점을 비롯하여 다른 고루틴과 함께 동시에 실행되는 함수. Go는 여러 개의 고루틴이 하나의 스레드에서 동작한다. 채널(channel)은 내장된 동기화 기능을 이용해서 고루틴 간의 형식화된 메세지를 공유할 수 있는 데이터 구조이다. 공유 메모리 접근을 허용하는 프로그래밍 언어에서 발생하는 문제들을 손쉽게 피할 수 있음. 동시에 발생하는 수정요청으로부터 데이터를 안전하게 보호하기 위한 패턴을 제공함. 채널을 통해 어느 한 시점에 하나의 고루틴만이 데이터를 수정할 수 있는 패턴임. 타입 시스템 메모리 관리(GC) 요약 Golang은 모던하고 빠르며 강력한 표준 라이브러리를 제공하는 언어이다. Go는 동시성 기능을 자체적으로 내장한다. Go는 코드 재사용을 위한 Block으로서 인터페이스를 활용한다.</summary></entry></feed>
