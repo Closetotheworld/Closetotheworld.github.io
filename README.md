@@ -1,4 +1,4 @@
-## closetotheworld.github.io
+## <u>closetotheworld.github.io</u>
 
 - cs지식을 모으고
 - golang과 python을 좋아하며
