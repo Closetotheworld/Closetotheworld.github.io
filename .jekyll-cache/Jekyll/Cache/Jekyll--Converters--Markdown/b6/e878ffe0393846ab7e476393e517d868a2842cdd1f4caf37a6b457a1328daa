@@ -1,0 +1,32 @@
+I"�<p><strong>학습 한 내용</strong></p>
+<ul class="notice--warning">
+  <li>Go의 흐름</li>
+</ul>
+
+<h3 id="golang의-실행흐름">Golang의 실행흐름</h3>
+<p>Golang의 실행흐름을 알아보자</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">main.go</code> 에서 보통 시작한다.<br />
+  ```golang
+  # main.go</li>
+</ol>
+
+<p>import (
+    “log”
+    “os”
+  )</p>
+
+<p>func init(){
+    log.setOutput(os.Stdout)
+  }</p>
+
+<p>func main(){
+    search.Run(“wonryang”)
+  }
+  ```</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">main</code> 이라는 패키지에 구현되어있다.</li>
+  <li>Go의 모든 코드는 패키지에 종속되어야 한다.</li>
+</ul>
+
+:ET

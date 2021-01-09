@@ -1,0 +1,783 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>WSL2 terminal custom - closetotheworld’s devlog</title>
+<meta name="description" content="WSL2?    Windows Subsystem Linux   윈도우 시스템을 Linux로도 이용할 수 있는 것!   WSL1보다 2가 조금 더 성능이 좋다고 한다.   리눅스의 terminal을 좋아하는 나로서는 너무 환영!   terminal을 바꿔보자    MAC에서도 사용하는 oh my zsh를 설치할 것이다.   조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요!        우선 먼저 zsh를 다운받아야 합니다..! zsh 다운로드 링크가 귀찮으신 분들은!        sudo apt install zsh          위 명령을 bash에 입력!           이후에는 oh my zsh를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다!        sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;           위 커맨드로 oh my zsh를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다!               당연히 YES 겠죠!                그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다!                하지만 뭔가 심심하다.. 더 시도해보자!           Powerlevel10K    오늘은 일찍 잘 예정이므로 내일 포스트. . !">
+
+
+  <meta name="author" content="Wonryang Heo">
+  
+  <meta property="article:author" content="Wonryang Heo">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="closetotheworld's devlog">
+<meta property="og:title" content="WSL2 terminal custom">
+<meta property="og:url" content="https://closetotheworld.github.io/etc/wsl2-custom/">
+
+
+  <meta property="og:description" content="WSL2?    Windows Subsystem Linux   윈도우 시스템을 Linux로도 이용할 수 있는 것!   WSL1보다 2가 조금 더 성능이 좋다고 한다.   리눅스의 terminal을 좋아하는 나로서는 너무 환영!   terminal을 바꿔보자    MAC에서도 사용하는 oh my zsh를 설치할 것이다.   조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요!        우선 먼저 zsh를 다운받아야 합니다..! zsh 다운로드 링크가 귀찮으신 분들은!        sudo apt install zsh          위 명령을 bash에 입력!           이후에는 oh my zsh를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다!        sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;           위 커맨드로 oh my zsh를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다!               당연히 YES 겠죠!                그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다!                하지만 뭔가 심심하다.. 더 시도해보자!           Powerlevel10K    오늘은 일찍 잘 예정이므로 내일 포스트. . !">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-01-09T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-01-10T07:20:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://closetotheworld.github.io/etc/wsl2-custom/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "CloseTotheWorld",
+      "url": "https://closetotheworld.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="closetotheworld's devlog Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          closetotheworld's devlog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">See more</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="https://closetotheworld.github.io/" itemprop="item"><span itemprop="name">🌝Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#etc" itemprop="item"><span itemprop="name">Etc</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">WSL2 terminal custom</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/myPic.jpg" alt="Wonryang Heo" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Wonryang Heo</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I want to be a goood developer</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:hwr0450@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://closetotheworld.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://www.facebook.com/heo.mandu.1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i><span class="label">Facebook</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/closetotheworld" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.instagram.com/amountofcircle/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">See more</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+            전체 글 수 <u>9</u> 개
+      </li>
+      <li>
+        <span class="nav__sub-title">Language</span>
+            <ul>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                        <li><a href="/categories/golang" class="">golang (2)</a></li>
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Computer Science</span>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/network" class="">network (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">algorithm</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">daily</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/daily" class="">일상끄적 (4)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+
+
+  
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="WSL2 terminal custom">
+    <meta itemprop="description" content="WSL2?  Windows Subsystem Linux  윈도우 시스템을 Linux로도 이용할 수 있는 것!  WSL1보다 2가 조금 더 성능이 좋다고 한다.  리눅스의 terminal을 좋아하는 나로서는 너무 환영!terminal을 바꿔보자  MAC에서도 사용하는 oh my zsh를 설치할 것이다.  조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요!      우선 먼저 zsh를 다운받아야 합니다..! zsh 다운로드 링크가 귀찮으신 분들은!      sudo apt install zsh        위 명령을 bash에 입력!        이후에는 oh my zsh를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다!      sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;        위 커맨드로 oh my zsh를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다!            당연히 YES 겠죠!            그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다!            하지만 뭔가 심심하다.. 더 시도해보자!      Powerlevel10K  오늘은 일찍 잘 예정이므로 내일 포스트. . !">
+    <meta itemprop="datePublished" content="2021-01-09T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-01-10T07:20:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">WSL2 terminal custom
+</h1>
+          
+            <p class="page__meta"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong> <time datetime="2021-01-09T00:00:00+09:00">2021.01.09</time>&nbsp&nbsp&nbsp<strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-01-09 22:20:00 +0000">2021.01.09</time></p>
+          
+          
+            
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#etc" class="page__taxonomy-item-category" rel="tag">etc</a>
+    
+    </span>
+  </p>
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#custom" class="page__taxonomy-item-tag" rel="tag">custom</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#terminal" class="page__taxonomy-item-tag" rel="tag">terminal</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#tutorial" class="page__taxonomy-item-tag" rel="tag">tutorial</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#wsl2" class="page__taxonomy-item-tag" rel="tag">wsl2</a>
+    
+    </span>
+  </p>
+
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-align-left"></i> C O N T E N T S</h4></header>
+              <ul class="toc__menu"><li><a href="#wsl2">WSL2?</a></li><li><a href="#terminal을-바꿔보자">terminal을 바꿔보자</a></li><li><a href="#powerlevel10k">Powerlevel10K</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h3 id="wsl2">WSL2?</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Windows Subsystem Linux</code></li>
+  <li>윈도우 시스템을 <u>Linux로도</u> 이용할 수 있는 것!</li>
+  <li>WSL1보다 2가 조금 더 성능이 좋다고 한다.</li>
+  <li>리눅스의 terminal을 좋아하는 나로서는 너무 환영!</li>
+</ul>
+
+<h3 id="terminal을-바꿔보자">terminal을 바꿔보자</h3>
+<ul>
+  <li>MAC에서도 사용하는 <code class="language-plaintext highlighter-rouge">oh my zsh</code>를 설치할 것이다.</li>
+  <li>조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요!</li>
+  <li>
+    <p>우선 먼저 zsh를 다운받아야 합니다..! <a href="https://github.com/ohmyzsh/wiki/Installing-ZSH">zsh 다운로드</a> 링크가 귀찮으신 분들은!</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">sudo </span>apt <span class="nb">install </span>zsh
+</code></pre></div>    </div>
+    <p>위 명령을 bash에 입력!</p>
+  </li>
+  <li>
+    <p>이후에는 <code class="language-plaintext highlighter-rouge">oh my zsh</code>를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다!</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  sh <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="si">)</span><span class="s2">"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>위 커맨드로 <code class="language-plaintext highlighter-rouge">oh my zsh</code>를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다!
+  <img src="https://user-images.githubusercontent.com/37994634/104092880-2e625600-52ca-11eb-9c34-5ce7375e2619.png" alt="image" />
+    <blockquote>
+      <p>당연히 YES 겠죠!</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다!
+  <img src="https://user-images.githubusercontent.com/37994634/104092945-9add5500-52ca-11eb-8339-4048e16dae8f.png" alt="image" /></p>
+
+    <blockquote>
+      <p>하지만 뭔가 심심하다.. 더 시도해보자!</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="powerlevel10k">Powerlevel10K</h3>
+<ul>
+  <li>오늘은 일찍 잘 예정이므로 내일 포스트. . !</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=WSL2+terminal+custom%20https%3A%2F%2Fclosetotheworld.github.io%2Fetc%2Fwsl2-custom%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclosetotheworld.github.io%2Fetc%2Fwsl2-custom%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclosetotheworld.github.io%2Fetc%2Fwsl2-custom%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/etc/vscode-custom/" class="pagination--pager" title="VScode extension - material theme (vscode custom)
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  <!-- 
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.09</p>
+      
+      
+        <a href="/etc/vscode-custom/" rel="permalink">VScode extension - material theme (vscode custom)
+</a>
+      
+
+      
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#etc" class="page__taxonomy-item-category" rel="tag">etc</a>
+                    
+                    
+                    <a href="/tags/#custom" class="page__taxonomy-item-tag" rel="tag">custom</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#tutorial" class="page__taxonomy-item-tag" rel="tag">tutorial</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#vscode" class="page__taxonomy-item-tag" rel="tag">vscode</a>
+                
+            </span>
+        </span>
+    </h2>
+    
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.08</p>
+      
+      
+        <a href="/golang/go_series_2/" rel="permalink">Golang, 간단히 살펴보자!- Go series(2)
+</a>
+      
+
+      
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#golang" class="page__taxonomy-item-category" rel="tag">Golang</a>
+                    
+                    
+                    <a href="/tags/#language" class="page__taxonomy-item-tag" rel="tag">language</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#tutorial" class="page__taxonomy-item-tag" rel="tag">tutorial</a>
+                
+            </span>
+        </span>
+    </h2>
+    
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.08</p>
+      
+      
+        <a href="/daily/diary/" rel="permalink">2021-01-08
+</a>
+      
+
+      
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#daily" class="page__taxonomy-item-category" rel="tag">daily</a>
+                    
+                    
+                    <a href="/tags/#diary" class="page__taxonomy-item-tag" rel="tag">diary</a>
+                
+            </span>
+        </span>
+    </h2>
+    
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.07</p>
+      
+      
+        <a href="/daily/diary/" rel="permalink">2021-01-07
+</a>
+      
+
+      
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#daily" class="page__taxonomy-item-category" rel="tag">daily</a>
+                    
+                    
+                    <a href="/tags/#diary" class="page__taxonomy-item-tag" rel="tag">diary</a>
+                
+            </span>
+        </span>
+    </h2>
+    
+  </article>
+</div>
+        
+      </div>
+    </div> -->
+  
+  <!--  -->
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.facebook.com/heo.mandu.1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+          <li><a href="https://github.com/closetotheworld" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/amountofcircle/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://git.kumoh42.com" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-gitlab" aria-hidden="true"></i> GitLab</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 CloseTotheWorld. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://closetotheworld.github.io/etc/wsl2-custom/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/etc/wsl2-custom"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://closetotheworld-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
