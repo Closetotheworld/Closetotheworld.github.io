@@ -18,8 +18,8 @@ last_modified_at: 2021-01-10T22:00:00
 
   - 타일을 가로로 배치 하는 경우
   - 타일을 세로로 배치 하는 경우
-  - 예를들어서 n이 7인 직사각형은 다음과 같이 채울 수 있습니다.
-    ![image](https://user-images.githubusercontent.com/37994634/104123585-5f588e80-538f-11eb-939f-2535dfc67f21.png){: width:300 height:300}
+  - 예를들어서 n이 7인 직사각형은 다음과 같이 채울 수 있습니다.  
+    ![image](https://user-images.githubusercontent.com/37994634/104123669-f0c80080-538f-11eb-877c-c24f377e3480.png){: width:300 height:300}
     <br>
 
 - 직사각형의 가로의 길이 n이 매개변수로 주어질 때, 이 직사각형을 채우는 방법의 수를 return 하는 solution 함수를 완성해주세요.
