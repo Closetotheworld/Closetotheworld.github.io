@@ -50,6 +50,9 @@
                     {% if category[0] == "daily" %}
                         <li><a href="/categories/daily" class="">일상끄적 ({{category[1].size}})</a></li>
                     {% endif %}
+                    {% if category[0] == "Reviews" %}
+                        <li><a href="/categories/reviews" class="">일상끄적 ({{category[1].size}})</a></li>
+                    {% endif %}
                 {% endfor %}
             </ul>
       </li>
