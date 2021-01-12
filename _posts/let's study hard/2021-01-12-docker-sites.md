@@ -2,9 +2,9 @@
 title: "docker 시작 시 참고 사이트"
 
 categories:
-  - linux
+  - docker
 tags:
-  - [CentOS7]
+  - [container, MSA]
 
 toc: true
 toc_sticky: true
