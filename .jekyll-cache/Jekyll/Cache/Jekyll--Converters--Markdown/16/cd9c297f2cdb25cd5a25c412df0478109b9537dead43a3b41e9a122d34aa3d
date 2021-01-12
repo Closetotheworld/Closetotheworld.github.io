@@ -1,0 +1,28 @@
+I"+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.12</p>
+      
+      
+        <a href="/linux/centos-user-config/" rel="permalink">CentOS 7 user 생성과 sudoer
+</a>
+      
+
+      
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#linux" class="page__taxonomy-item-category" rel="tag">linux</a>
+                    
+                    
+                    <a href="/tags/#centos7" class="page__taxonomy-item-tag" rel="tag">CentOS7</a>
+                
+            </span>
+        </span>
+    </h2>
+    
+  </article>
+</div>
+
+:ET

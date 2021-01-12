@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>WSL2 terminal custom - closetotheworld’s devlog</title>
-<meta name="description" content="WSL2?    Windows Subsystem Linux   윈도우 시스템을 Linux로도 이용할 수 있는 것!   WSL1보다 2가 조금 더 성능이 좋다고 한다.   리눅스의 terminal을 좋아하는 나로서는 너무 환영!   terminal을 바꿔보자    MAC에서도 사용하는 oh my zsh를 설치할 것이다.   조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요!        우선 먼저 zsh를 다운받아야 합니다..! zsh 다운로드 링크가 귀찮으신 분들은!        sudo apt install zsh          위 명령을 bash에 입력!           이후에는 oh my zsh를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다!        sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;           위 커맨드로 oh my zsh를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다!               당연히 YES 겠죠!                그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다!                하지만 뭔가 심심하다.. 더 시도해보자!           Powerlevel10K    오늘은 일찍 잘 예정이므로 내일 포스트. . !">
+<meta name="description" content="WSL2?     Windows Subsystem Linux   윈도우 시스템을 Linux로도 이용할 수 있는 것!   WSL1보다 2가 조금 더 성능이 좋다고 한다.   리눅스의 terminal을 좋아하는 나로서는 너무 환영!   terminal을 바꿔보자     MAC에서도 사용하는 oh my zsh를 설치할 것이다.   조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요!        우선 먼저 zsh를 다운받아야 합니다..! zsh 다운로드 « 클릭!      sudo apt install zsh           위 명령을 bash에 입력!           이후에는 oh my zsh를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다!      sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;           위 커맨드로 oh my zsh를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다!             당연히 YES 겠죠!                그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다!              하지만 뭔가 심심하다.. 더 시도해보자!           Powerlevel10K          Powerlevel10K 에서는 본인의 oh my zsh를 쉽게 커스텀 해 준다!           우선 powerlevel10k의 github 주소로 들어가서 따라 해보자!             powerlevel10k 클릭                           내리다보면 이 부분이 보인다! oh my zsh 밑에있는 git 명령어를 복사해주자.                        이후로 ~/.zshrc 을 편집기로 열어 ZSH_THEME=”robbyrussell” 부분의 robbyrussell을 위 이미지처럼 powerlevel10k/powerlevel10k 로 바꾸어준다.                       그 다음 github 주소에서 밑으로 내리다보면 다음과 같은 폰트파일이 보인다                     전부 다운받아 준 뒤 wsl2를 재시작해보자!                                위 과정을 따라했다면, 마법사가 시작되는데, 터미널에서는 아무리봐도 네모 두 개인 글자를 보고 다이아몬드로 보이냐고 물어본다. 이는 폰트가 적용되지 않았기 때문이다. 자! 폰트설정을 해보자!                 위 이미지에서 설정을 눌러주면 vscode든 visual studio든 편집기로 settings.json이 열릴 것이다!                            쭉 내려와서 본인의 wsl2 profile 부분에 FONT설정을 MesloLGS NF 로 입력해주자!                       이후에는 다이아몬드던 데비안로고던 물어보는 로고가 다 잘 표시가 될 것이다! 설정은 본인의 입맛대로 구성하면 된다 :)                     나의 Termianl">
 
 
   <meta name="author" content="Wonryang Heo">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://closetotheworld.github.io/etc/wsl2-custom/">
 
 
-  <meta property="og:description" content="WSL2?    Windows Subsystem Linux   윈도우 시스템을 Linux로도 이용할 수 있는 것!   WSL1보다 2가 조금 더 성능이 좋다고 한다.   리눅스의 terminal을 좋아하는 나로서는 너무 환영!   terminal을 바꿔보자    MAC에서도 사용하는 oh my zsh를 설치할 것이다.   조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요!        우선 먼저 zsh를 다운받아야 합니다..! zsh 다운로드 링크가 귀찮으신 분들은!        sudo apt install zsh          위 명령을 bash에 입력!           이후에는 oh my zsh를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다!        sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;           위 커맨드로 oh my zsh를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다!               당연히 YES 겠죠!                그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다!                하지만 뭔가 심심하다.. 더 시도해보자!           Powerlevel10K    오늘은 일찍 잘 예정이므로 내일 포스트. . !">
+  <meta property="og:description" content="WSL2?     Windows Subsystem Linux   윈도우 시스템을 Linux로도 이용할 수 있는 것!   WSL1보다 2가 조금 더 성능이 좋다고 한다.   리눅스의 terminal을 좋아하는 나로서는 너무 환영!   terminal을 바꿔보자     MAC에서도 사용하는 oh my zsh를 설치할 것이다.   조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요!        우선 먼저 zsh를 다운받아야 합니다..! zsh 다운로드 « 클릭!      sudo apt install zsh           위 명령을 bash에 입력!           이후에는 oh my zsh를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다!      sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;           위 커맨드로 oh my zsh를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다!             당연히 YES 겠죠!                그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다!              하지만 뭔가 심심하다.. 더 시도해보자!           Powerlevel10K          Powerlevel10K 에서는 본인의 oh my zsh를 쉽게 커스텀 해 준다!           우선 powerlevel10k의 github 주소로 들어가서 따라 해보자!             powerlevel10k 클릭                           내리다보면 이 부분이 보인다! oh my zsh 밑에있는 git 명령어를 복사해주자.                        이후로 ~/.zshrc 을 편집기로 열어 ZSH_THEME=”robbyrussell” 부분의 robbyrussell을 위 이미지처럼 powerlevel10k/powerlevel10k 로 바꾸어준다.                       그 다음 github 주소에서 밑으로 내리다보면 다음과 같은 폰트파일이 보인다                     전부 다운받아 준 뒤 wsl2를 재시작해보자!                                위 과정을 따라했다면, 마법사가 시작되는데, 터미널에서는 아무리봐도 네모 두 개인 글자를 보고 다이아몬드로 보이냐고 물어본다. 이는 폰트가 적용되지 않았기 때문이다. 자! 폰트설정을 해보자!                 위 이미지에서 설정을 눌러주면 vscode든 visual studio든 편집기로 settings.json이 열릴 것이다!                            쭉 내려와서 본인의 wsl2 profile 부분에 FONT설정을 MesloLGS NF 로 입력해주자!                       이후에는 다이아몬드던 데비안로고던 물어보는 로고가 다 잘 표시가 될 것이다! 설정은 본인의 입맛대로 구성하면 된다 :)                     나의 Termianl">
 
 
 
@@ -323,16 +323,22 @@
   <label for="ac-toc">See more</label>
   <ul class="nav__items" id="category_tag_menu">
       <li>
-            전체 글 수 <u>9</u> 개
+            전체 글 수 <u>13</u> 개
       </li>
       <li>
-        <span class="nav__sub-title">Language</span>
+        <span class="nav__sub-title">Let's study hard!</span>
             <ul>
                 
                     
                     
                     
+                    
+                    
+                    
                 
+                    
+                    
+                    
                     
                     
                     
@@ -342,8 +348,39 @@
                         <li><a href="/categories/golang" class="">golang (2)</a></li>
                     
                     
+                    
+                    
+                    
                 
                     
+                    
+                    
+                    
+                    
+                    
+                        <li><a href="/categories/etc" class="">etc (2)</a></li>
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                        <li><a href="/categories/linux" class="">linux (1)</a></li>
                     
                     
                 
@@ -356,6 +393,12 @@
                 
                     
                         <li><a href="/categories/network" class="">network (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
                     
                 
                     
@@ -375,19 +418,42 @@
                 
                     
                 
+                    
+                        <li><a href="/categories/programmers" class="">프로그래머스 (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
             </ul>
 
         <span class="nav__sub-title">daily</span>
             <ul>
                 
                     
-                        <li><a href="/categories/daily" class="">일상끄적 (4)</a></li>
+                        <li><a href="/categories/daily" class="">일상끄적 (5)</a></li>
+                    
                     
                 
                     
-                
                     
                 
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                        <li><a href="/categories/reviews" class="">something reviews (1)</a></li>
+                    
+                
+                    
                     
                 
             </ul>
@@ -404,7 +470,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="WSL2 terminal custom">
-    <meta itemprop="description" content="WSL2?  Windows Subsystem Linux  윈도우 시스템을 Linux로도 이용할 수 있는 것!  WSL1보다 2가 조금 더 성능이 좋다고 한다.  리눅스의 terminal을 좋아하는 나로서는 너무 환영!terminal을 바꿔보자  MAC에서도 사용하는 oh my zsh를 설치할 것이다.  조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요!      우선 먼저 zsh를 다운받아야 합니다..! zsh 다운로드 링크가 귀찮으신 분들은!      sudo apt install zsh        위 명령을 bash에 입력!        이후에는 oh my zsh를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다!      sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;        위 커맨드로 oh my zsh를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다!            당연히 YES 겠죠!            그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다!            하지만 뭔가 심심하다.. 더 시도해보자!      Powerlevel10K  오늘은 일찍 잘 예정이므로 내일 포스트. . !">
+    <meta itemprop="description" content="WSL2?  Windows Subsystem Linux  윈도우 시스템을 Linux로도 이용할 수 있는 것!  WSL1보다 2가 조금 더 성능이 좋다고 한다.  리눅스의 terminal을 좋아하는 나로서는 너무 환영!terminal을 바꿔보자  MAC에서도 사용하는 oh my zsh를 설치할 것이다.  조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요!      우선 먼저 zsh를 다운받아야 합니다..! zsh 다운로드 « 클릭!    sudo apt install zsh        위 명령을 bash에 입력!        이후에는 oh my zsh를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다!    sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;        위 커맨드로 oh my zsh를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다!          당연히 YES 겠죠!            그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다!          하지만 뭔가 심심하다.. 더 시도해보자!      Powerlevel10K      Powerlevel10K 에서는 본인의 oh my zsh를 쉽게 커스텀 해 준다!        우선 powerlevel10k의 github 주소로 들어가서 따라 해보자!          powerlevel10k 클릭                      내리다보면 이 부분이 보인다! oh my zsh 밑에있는 git 명령어를 복사해주자.                    이후로 ~/.zshrc 을 편집기로 열어 ZSH_THEME=”robbyrussell” 부분의 robbyrussell을 위 이미지처럼 powerlevel10k/powerlevel10k 로 바꾸어준다.                    그 다음 github 주소에서 밑으로 내리다보면 다음과 같은 폰트파일이 보인다                  전부 다운받아 준 뒤 wsl2를 재시작해보자!                          위 과정을 따라했다면, 마법사가 시작되는데, 터미널에서는 아무리봐도 네모 두 개인 글자를 보고 다이아몬드로 보이냐고 물어본다. 이는 폰트가 적용되지 않았기 때문이다. 자! 폰트설정을 해보자!            위 이미지에서 설정을 눌러주면 vscode든 visual studio든 편집기로 settings.json이 열릴 것이다!                      쭉 내려와서 본인의 wsl2 profile 부분에 FONT설정을 MesloLGS NF 로 입력해주자!                    이후에는 다이아몬드던 데비안로고던 물어보는 로고가 다 잘 표시가 될 것이다! 설정은 본인의 입맛대로 구성하면 된다 :)              나의 Termianl ">
     <meta itemprop="datePublished" content="2021-01-09T00:00:00+09:00">
     <meta itemprop="dateModified" content="2021-01-10T07:20:00+09:00">
 
@@ -479,6 +545,7 @@
           </aside>
         
         <h3 id="wsl2">WSL2?</h3>
+
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Windows Subsystem Linux</code></li>
   <li>윈도우 시스템을 <u>Linux로도</u> 이용할 수 있는 것!</li>
@@ -487,31 +554,33 @@
 </ul>
 
 <h3 id="terminal을-바꿔보자">terminal을 바꿔보자</h3>
+
 <ul>
   <li>MAC에서도 사용하는 <code class="language-plaintext highlighter-rouge">oh my zsh</code>를 설치할 것이다.</li>
   <li>조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요!</li>
   <li>
-    <p>우선 먼저 zsh를 다운받아야 합니다..! <a href="https://github.com/ohmyzsh/wiki/Installing-ZSH">zsh 다운로드</a> 링크가 귀찮으신 분들은!</p>
+    <p>우선 먼저 zsh를 다운받아야 합니다..! <a href="https://github.com/ohmyzsh/wiki/Installing-ZSH">zsh 다운로드</a> « 클릭!</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">sudo </span>apt <span class="nb">install </span>zsh
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>zsh
 </code></pre></div>    </div>
+
     <p>위 명령을 bash에 입력!</p>
   </li>
   <li>
     <p>이후에는 <code class="language-plaintext highlighter-rouge">oh my zsh</code>를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다!</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  sh <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="si">)</span><span class="s2">"</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="si">)</span><span class="s2">"</span>
 </code></pre></div>    </div>
   </li>
   <li>위 커맨드로 <code class="language-plaintext highlighter-rouge">oh my zsh</code>를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다!
-  <img src="https://user-images.githubusercontent.com/37994634/104092880-2e625600-52ca-11eb-9c34-5ce7375e2619.png" alt="image" />
+<img src="https://user-images.githubusercontent.com/37994634/104092880-2e625600-52ca-11eb-9c34-5ce7375e2619.png" alt="image" />
     <blockquote>
       <p>당연히 YES 겠죠!</p>
     </blockquote>
   </li>
   <li>
     <p>그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다!
-  <img src="https://user-images.githubusercontent.com/37994634/104092945-9add5500-52ca-11eb-8339-4048e16dae8f.png" alt="image" /></p>
+<img src="https://user-images.githubusercontent.com/37994634/104092945-9add5500-52ca-11eb-8339-4048e16dae8f.png" alt="image" /></p>
 
     <blockquote>
       <p>하지만 뭔가 심심하다.. 더 시도해보자!</p>
@@ -520,9 +589,60 @@
 </ul>
 
 <h3 id="powerlevel10k">Powerlevel10K</h3>
+
 <ul>
-  <li>오늘은 일찍 잘 예정이므로 내일 포스트. . !</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Powerlevel10K</code> 에서는 본인의 <code class="language-plaintext highlighter-rouge">oh my zsh</code>를 쉽게 커스텀 해 준다!</p>
+  </li>
+  <li>
+    <p>우선 <code class="language-plaintext highlighter-rouge">powerlevel10k</code>의 github 주소로 들어가서 따라 해보자!</p>
+
+    <blockquote>
+      <p><a href="https://github.com/romkatv/powerlevel10k#oh-my-zsh">powerlevel10k 클릭</a></p>
+    </blockquote>
+
+    <ul>
+      <li>
+        <p>내리다보면 이 부분이 보인다! oh my zsh 밑에있는 git 명령어를 복사해주자.<br />
+<img src="https://user-images.githubusercontent.com/37994634/104301064-8edfd600-550a-11eb-868b-821fb5fb5620.png" alt="image" /></p>
+      </li>
+      <li>
+        <p>이후로 <code class="language-plaintext highlighter-rouge">~/.zshrc</code> 을 편집기로 열어 ZSH_THEME=”robbyrussell” 부분의 robbyrussell을 위 이미지처럼 powerlevel10k/powerlevel10k 로 바꾸어준다.</p>
+      </li>
+      <li>
+        <p>그 다음 github 주소에서 밑으로 내리다보면 다음과 같은 폰트파일이 보인다<br />
+<img src="https://user-images.githubusercontent.com/37994634/104301390-eda54f80-550a-11eb-95e1-376fa09eabf8.png" alt="image" /></p>
+        <ul>
+          <li>전부 다운받아 준 뒤 wsl2를 재시작해보자!</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>위 과정을 따라했다면, 마법사가 시작되는데, 터미널에서는 아무리봐도 네모 두 개인 글자를 보고 다이아몬드로 보이냐고 물어본다. 이는 폰트가 적용되지 않았기 때문이다. 자! 폰트설정을 해보자!</p>
+
+    <p><img src="https://user-images.githubusercontent.com/37994634/104301601-32c98180-550b-11eb-8b7b-5f4e7ebcda6b.png" alt="image" /></p>
+  </li>
+  <li>
+    <p>위 이미지에서 설정을 눌러주면 vscode든 visual studio든 편집기로 settings.json이 열릴 것이다!</p>
+
+    <p><img src="https://user-images.githubusercontent.com/37994634/104301910-86d46600-550b-11eb-8f66-e23619e24b7a.png" alt="image" /></p>
+
+    <ul>
+      <li>
+        <p>쭉 내려와서 본인의 wsl2 profile 부분에 FONT설정을 <code class="language-plaintext highlighter-rouge">MesloLGS NF</code> 로 입력해주자!</p>
+      </li>
+      <li>
+        <p>이후에는 다이아몬드던 데비안로고던 물어보는 로고가 다 잘 표시가 될 것이다! 설정은 본인의 입맛대로 구성하면 된다 :)</p>
+      </li>
+    </ul>
+  </li>
 </ul>
+
+<blockquote>
+  <p>나의 Termianl<br />
+ <img src="https://user-images.githubusercontent.com/37994634/104302124-c307c680-550b-11eb-8c88-a523f77028ae.png" alt="image" /></p>
+</blockquote>
 
         
       </section>
@@ -551,7 +671,8 @@
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/daily/210109-diary/" class="pagination--pager" title="2021-01-09
+">Next</a>
     
   </nav>
 
@@ -574,112 +695,108 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     <h2 class="archive__item-title" itemprop="headline">
       
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.12</p>
+      
+      
+        <a href="/linux/centos-user-config/" rel="permalink">CentOS 7 user 생성과 sudoer
+</a>
+      
+
+      
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#linux" class="page__taxonomy-item-category" rel="tag">linux</a>
+                    
+                    
+                    <a href="/tags/#centos7" class="page__taxonomy-item-tag" rel="tag">CentOS7</a>
+                
+            </span>
+        </span>
+    </h2>
+    
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.11</p>
+      
+      
+        <a href="/reviews/vcnc-coding-test-review/" rel="permalink">VCNC 코딩테스트 후기
+</a>
+      
+
+      
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#reviews" class="page__taxonomy-item-category" rel="tag">Reviews</a>
+                    
+                    
+                    <a href="/tags/#codingtest" class="page__taxonomy-item-tag" rel="tag">codingtest</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#lookingforajob" class="page__taxonomy-item-tag" rel="tag">lookingforajob</a>
+                
+            </span>
+        </span>
+    </h2>
+    
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.10</p>
+      
+      
+        <a href="/programmers/programmers-2xn/" rel="permalink">Programmers level-3 (2xn 타일)
+</a>
+      
+
+      
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#programmers" class="page__taxonomy-item-category" rel="tag">Programmers</a>
+                    
+                    
+                    <a href="/tags/#algorithm" class="page__taxonomy-item-tag" rel="tag">algorithm</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#fibonacci" class="page__taxonomy-item-tag" rel="tag">fibonacci</a>
+                
+            </span>
+        </span>
+    </h2>
+    
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      
       <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.09</p>
       
       
-        <a href="/etc/vscode-custom/" rel="permalink">VScode extension - material theme (vscode custom)
-</a>
-      
-
-      
-        
-        <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#etc" class="page__taxonomy-item-category" rel="tag">etc</a>
-                    
-                    
-                    <a href="/tags/#custom" class="page__taxonomy-item-tag" rel="tag">custom</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#tutorial" class="page__taxonomy-item-tag" rel="tag">tutorial</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#vscode" class="page__taxonomy-item-tag" rel="tag">vscode</a>
-                
-            </span>
-        </span>
-    </h2>
-    
-  </article>
-</div>
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    <h2 class="archive__item-title" itemprop="headline">
-      
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.08</p>
-      
-      
-        <a href="/golang/go_series_2/" rel="permalink">Golang, 간단히 살펴보자!- Go series(2)
-</a>
-      
-
-      
-        
-        <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#golang" class="page__taxonomy-item-category" rel="tag">Golang</a>
-                    
-                    
-                    <a href="/tags/#language" class="page__taxonomy-item-tag" rel="tag">language</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#tutorial" class="page__taxonomy-item-tag" rel="tag">tutorial</a>
-                
-            </span>
-        </span>
-    </h2>
-    
-  </article>
-</div>
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    <h2 class="archive__item-title" itemprop="headline">
-      
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.08</p>
-      
-      
-        <a href="/daily/diary/" rel="permalink">2021-01-08
-</a>
-      
-
-      
-        
-        <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#daily" class="page__taxonomy-item-category" rel="tag">daily</a>
-                    
-                    
-                    <a href="/tags/#diary" class="page__taxonomy-item-tag" rel="tag">diary</a>
-                
-            </span>
-        </span>
-    </h2>
-    
-  </article>
-</div>
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    <h2 class="archive__item-title" itemprop="headline">
-      
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.07</p>
-      
-      
-        <a href="/daily/diary/" rel="permalink">2021-01-07
+        <a href="/daily/210109-diary/" rel="permalink">2021-01-09
 </a>
       
 

@@ -20,23 +20,23 @@ var store = [{
         "title": "2021-01-06",
         "excerpt":"오랜만에 집을 왔다 얼마만에 집을 온건지, 추석 이후로 오랜만에 본가에 왔다. 가족들의 얼굴을 오랜만에 보니 너무 좋다. 작년 하반기에는 취업준비니 개인 프로젝트니 공부니 나 자신을 너무 채찍질 했던 것 같다. 그래도 주변 사람과 가족은 챙기면서 살아야지. 다잡은 목표 취업준비를 열심히 하되 나를 놓지말자. 내가 좋아하는 것, 옷이나 클래식음악 등등 쉴...","categories": ["daily"],
         "tags": ["diary"],
-        "url": "https://closetotheworld.github.io/daily/diary/",
+        "url": "https://closetotheworld.github.io/daily/210106-diary/",
         "teaser": null
       },{
         "title": "2021-01-07",
-        "excerpt":"집에 오니 너무 편하당     일단 잘 먹는다   부모님 얼굴 매일보니 좋다   평화롭다   study     Golang 실습코드 만드느라 포스팅은 몰아서 해야겠다   CS공부한것도 하나씩 올려야지   아무래도 본가에 와서 노트북만 들고 하려니 더블모니터가 그리워잇      오늘도 고생했다!   ","categories": ["daily"],
+        "excerpt":"집에 오니 너무 편하당      일단 잘 먹는다   부모님 얼굴 매일보니 좋다   평화롭다   study      Golang 실습코드 만드느라 포스팅은 몰아서 해야겠다   CS공부한것도 하나씩 올려야지   아무래도 본가에 와서 노트북만 들고 하려니 더블모니터가 그리워잇      오늘도 고생했다!   ","categories": ["daily"],
         "tags": ["diary"],
-        "url": "https://closetotheworld.github.io/daily/diary/",
+        "url": "https://closetotheworld.github.io/daily/210107-diary/",
         "teaser": null
       },{
         "title": "2021-01-08",
-        "excerpt":"오늘 먹은 것        뒷고기는 항상 옳으시다    내일은 다시 구미로     다시 가서 열심히 포스트하고 열심히 공부하고   얼마 남지않은 연구실에서의 공부 야무지게 끝내자잇   오늘도 고생했따!  ","categories": ["daily"],
+        "excerpt":"오늘 먹은 것         뒷고기는 항상 옳으시다    내일은 다시 구미로      다시 가서 열심히 포스트하고 열심히 공부하고   얼마 남지않은 연구실에서의 공부 야무지게 끝내자잇   오늘도 고생했따!  ","categories": ["daily"],
         "tags": ["diary"],
-        "url": "https://closetotheworld.github.io/daily/diary/",
+        "url": "https://closetotheworld.github.io/daily/210108-diary/",
         "teaser": null
       },{
         "title": "Golang, 간단히 살펴보자!- Go series(2)",
-        "excerpt":"학습 한 내용     Go의 흐름   Golang의 실행흐름  Golang의 실행흐름을 알아보자     main.go 에서 보통 시작한다.      # main.go   import (    \"log\"    \"os\"  )   func init(){    log.setOutput(os.Stdout)  }   func main(){    search.Run(\"wonryang\")  }              main 이라는 패키지에 구현되어있다.   Go의 모든 코드는 패키지에 종속되어야 한다.   ","categories": ["Golang"],
+        "excerpt":"학습 한 내용      Go의 흐름   Golang의 실행흐름   Golang의 실행흐름을 알아보자           main.go 에서 보통 시작한다.       # main.go  import (   \"log\"   \"os\" )  func init(){   log.setOutput(os.Stdout) }  func main(){   search.Run(\"wonryang\") }              main 이라는 패키지에 구현되어있다.   Go의 모든 코드는 패키지에 종속되어야 한다.  ","categories": ["Golang"],
         "tags": ["language","tutorial"],
         "url": "https://closetotheworld.github.io/golang/go_series_2/",
         "teaser": null
@@ -51,5 +51,29 @@ var store = [{
         "excerpt":"WSL2? Windows Subsystem Linux 윈도우 시스템을 Linux로도 이용할 수 있는 것! WSL1보다 2가 조금 더 성능이 좋다고 한다. 리눅스의 terminal을 좋아하는 나로서는 너무 환영! terminal을 바꿔보자 MAC에서도 사용하는 oh my zsh를 설치할 것이다. 조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요! 우선 먼저 zsh를 다운받아야 합니다..! zsh...","categories": ["etc"],
         "tags": ["wsl2","terminal","custom","tutorial"],
         "url": "https://closetotheworld.github.io/etc/wsl2-custom/",
+        "teaser": null
+      },{
+        "title": "2021-01-09",
+        "excerpt":"다시 구미로 왔다! 디지털관의 냄새가 역시 제일 편하다 터미널에서 내려서 바로 연구실로 왔다! 바로 집으로 가면 포스트를 안할 것 같아서.. 퀄리티 있는 포스트 적기가 어렵다 아는것 대로 다 적으면 요점이 안 사는 것 같고,, 처음이라 그렇겠지? 많은 포스트를 하게되면 조금 더 괜찮아 질 것 같다 커스텀 포스트를 너무 대충 적은...","categories": ["daily"],
+        "tags": ["diary"],
+        "url": "https://closetotheworld.github.io/daily/210109-diary/",
+        "teaser": null
+      },{
+        "title": "Programmers level-3 (2xn 타일)",
+        "excerpt":"2xn 타일 문제 가로 길이가 2이고 세로의 길이가 1인 직사각형모양의 타일이 있습니다. 이 직사각형 타일을 이용하여 세로의 길이가 2이고 가로의 길이가 n인 바닥을 가득 채우려고 합니다. 타일을 채울 때는 다음과 같이 2가지 방법이 있습니다. 타일을 가로로 배치 하는 경우 타일을 세로로 배치 하는 경우 예를들어서 n이 7인 직사각형은 다음과 같이...","categories": ["Programmers"],
+        "tags": ["algorithm","fibonacci"],
+        "url": "https://closetotheworld.github.io/programmers/programmers-2xn/",
+        "teaser": null
+      },{
+        "title": "VCNC 코딩테스트 후기",
+        "excerpt":"VCNC? 타다, 비트윈을 만든 회사! 타다는 몰라도 비트윈을 여자친구와 사용하고 있어서 공고에서는 vcnc? 라고 궁금했지만 비트윈을 만든 회사라니! 마침 블라인드 채용을 진행하고 있기에 코딩테스트를 신청했다! 처음 신청 시에 어느 회사에 지원할 건지 뜨는데, 비트윈 사용자이기에 비트윈 서버개발자로 신청을 했고, 쏘카에 복수지원 할 것인지도 물어보아서 쏘카 이용자이기도 하기에 체크를 했다! 코딩테스트!...","categories": ["Reviews"],
+        "tags": ["codingtest","lookingforajob"],
+        "url": "https://closetotheworld.github.io/reviews/vcnc-coding-test-review/",
+        "teaser": null
+      },{
+        "title": "CentOS 7 user 생성과 sudoer",
+        "excerpt":"wheel과 sudoer 보통 centOS를 설치하면 초기 아이디는 root로 하여 패스워드를 설정하게 된다. sudo / wheel 그룹은 sudoers 파일에 정의 된 내용을 기반으로 하는 권한을 갖는다. STEP 1 - 사용자 생성 &amp; 비밀번호 설정 &amp; sudo권한 주기 우선 사용자를 생성한다. closetotheworld 를 사용하고싶은 이름으로 바꾸어서 실행. adduser closetotheworld 비밀번호를 설정한다 passwd...","categories": ["linux"],
+        "tags": ["CentOS7"],
+        "url": "https://closetotheworld.github.io/linux/centos-user-config/",
         "teaser": null
       }]

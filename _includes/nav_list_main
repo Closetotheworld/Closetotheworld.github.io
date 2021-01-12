@@ -11,7 +11,7 @@
             전체 글 수 <u>{{sum}}</u> 개
       </li>
       <li>
-        <span class="nav__sub-title">Language</span>
+        <span class="nav__sub-title">Let's study hard!</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Python" %}
@@ -22,6 +22,15 @@
                     {% endif %}
                     {% if category[0] == "Java" %}
                         <li><a href="/categories/java" class="">java ({{category[1].size}})</a></li>
+                    {% endif %}
+                    {% if category[0] == "Docker" %}
+                        <li><a href="/categories/Docker" class="">Docker ({{category[1].size}})</a></li>
+                    {% endif %}
+                    {% if category[0] == "linux" %}
+                        <li><a href="/categories/linux" class="">linux ({{category[1].size}})</a></li>
+                    {% endif %}
+                    {% if category[0] == "etc" %}
+                        <li><a href="/categories/etc" class="">etc ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -51,7 +60,7 @@
                         <li><a href="/categories/daily" class="">일상끄적 ({{category[1].size}})</a></li>
                     {% endif %}
                     {% if category[0] == "Reviews" %}
-                        <li><a href="/categories/reviews" class="">일상끄적 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/reviews" class="">something reviews ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

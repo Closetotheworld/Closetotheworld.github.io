@@ -1,14 +1,160 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-09T22:36:43+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">VScode extension - material theme (vscode custom)</title><link href="https://closetotheworld.github.io/etc/vscode-custom/" rel="alternate" type="text/html" title="VScode extension - material theme (vscode custom)" /><published>2021-01-09T00:00:00+09:00</published><updated>2021-01-10T06:40:00+09:00</updated><id>https://closetotheworld.github.io/etc/vscode-custom</id><content type="html" xml:base="https://closetotheworld.github.io/etc/vscode-custom/">&lt;h3 id=&quot;vs-code&quot;&gt;VS code!&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-12T21:20:36+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">CentOS 7 user 생성과 sudoer</title><link href="https://closetotheworld.github.io/linux/centos-user-config/" rel="alternate" type="text/html" title="CentOS 7 user 생성과 sudoer" /><published>2021-01-12T00:00:00+09:00</published><updated>2021-01-13T04:50:00+09:00</updated><id>https://closetotheworld.github.io/linux/centos-user-config</id><content type="html" xml:base="https://closetotheworld.github.io/linux/centos-user-config/">&lt;h3 id=&quot;wheel과-sudoer&quot;&gt;wheel과 sudoer&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;보통 centOS를 설치하면 초기 아이디는 root로 하여 패스워드를 설정하게 된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;sudo / wheel 그룹은 sudoers 파일에 정의 된 내용을 기반으로 하는 권한을 갖는다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;step-1---사용자-생성--비밀번호-설정--sudo권한-주기&quot;&gt;STEP 1 - 사용자 생성 &amp;amp; 비밀번호 설정 &amp;amp; sudo권한 주기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;우선 사용자를 생성한다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;u&gt;closetotheworld&lt;/u&gt; 를 사용하고싶은 이름으로 바꾸어서 실행.&lt;/p&gt;
+
+        &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;adduser closetotheworld
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;비밀번호를 설정한다&lt;/p&gt;
+        &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;passwd closetotheworld
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;wheel그룹 추가&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;usermod &lt;span class=&quot;nt&quot;&gt;-aG&lt;/span&gt; wheel closetotheworld
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;sudo 실행 시 비밀번호를 묻지 않게 하기 위해선 visudo를 열어 설정을 바꾸어줍니다.&lt;/p&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;## Same thing without a password&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# %wheel ALL=(ALL) NOPASSWD: ALL&lt;/span&gt;
+위 부분의 주석을 해제해준다
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;step-2---일반사용자-su-막기&quot;&gt;STEP 2 - 일반사용자 su 막기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;root권한은 어느 상황이던 중요하다. root로 실행되는 명령어는 추적이 되지 않고, 최고관리자이기 때문에 보안이슈가 발생한다. 따라서 root 계정 로그인을 막는다! 오직 root로 선 로그인을 해야만 하게!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;root 계정으로 로그인을 한 후 아래 입력!&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;4750 /bin/su
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;위와같이 설정하면 sudoer이라도 로그인을 못하는것을 볼 수 있다
+&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104313802-eaff2600-551b-11eb-9063-f78a60e7c169.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="linux" /><category term="CentOS7" /><summary type="html">wheel과 sudoer</summary></entry><entry><title type="html">VCNC 코딩테스트 후기</title><link href="https://closetotheworld.github.io/reviews/vcnc-coding-test-review/" rel="alternate" type="text/html" title="VCNC 코딩테스트 후기" /><published>2021-01-11T00:00:00+09:00</published><updated>2021-01-12T06:40:00+09:00</updated><id>https://closetotheworld.github.io/reviews/vcnc-coding-test-review</id><content type="html" xml:base="https://closetotheworld.github.io/reviews/vcnc-coding-test-review/">&lt;h3 id=&quot;vcnc&quot;&gt;VCNC?&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;타다, 비트윈을 만든 회사!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;타다는 몰라도 비트윈을 여자친구와 사용하고 있어서 공고에서는 vcnc? 라고 궁금했지만 비트윈을 만든 회사라니! 마침 블라인드 채용을 진행하고 있기에 코딩테스트를 신청했다!&lt;/p&gt;
+
+&lt;p&gt;처음 신청 시에 어느 회사에 지원할 건지 뜨는데, 비트윈 사용자이기에 비트윈 서버개발자로 신청을 했고, 쏘카에 복수지원 할 것인지도 물어보아서 쏘카 이용자이기도 하기에 체크를 했다!&lt;/p&gt;
+
+&lt;h3 id=&quot;코딩테스트&quot;&gt;코딩테스트!&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;2020-01-10(일)에 코테를 보았고 16시~19시 총 3시간을 진행했다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;한 문제는 트리 DP문제가 나왔고 백준 골드정도 되는 난이도였던 것 같다. 나머지 두 문제는 쉬웠다. 거의 구현문제 느낌&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2솔을 기본으로 가져야 합격하지 않을 까 하는 생각이다!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;결과2021-01-12&quot;&gt;결과(2021-01-12)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;u&gt;떨어졌다&lt;/u&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;어려운 편이었지만 3제출이여서 붙을 줄 알았는데, 아마 Tree DP 문제에서 실수가 있었을 것 같다!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;비슷한 문제인 BOJ 1949 &lt;a href=&quot;https://www.acmicpc.net/problem/1949&quot;&gt;우수마을&lt;/a&gt; 을 풀어봐야겠다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Reviews" /><category term="codingtest" /><category term="lookingforajob" /><summary type="html">VCNC?</summary></entry><entry><title type="html">Programmers level-3 (2xn 타일)</title><link href="https://closetotheworld.github.io/programmers/programmers-2xn/" rel="alternate" type="text/html" title="Programmers level-3 (2xn 타일)" /><published>2021-01-10T00:00:00+09:00</published><updated>2021-01-11T07:00:00+09:00</updated><id>https://closetotheworld.github.io/programmers/programmers-2xn</id><content type="html" xml:base="https://closetotheworld.github.io/programmers/programmers-2xn/">&lt;h3 id=&quot;2xn-타일-문제&quot;&gt;2xn 타일 문제&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;가로 길이가 2이고 세로의 길이가 1인 직사각형모양의 타일이 있습니다. 이 직사각형 타일을 이용하여 세로의 길이가 2이고 가로의 길이가 n인 바닥을 가득 채우려고 합니다. 타일을 채울 때는 다음과 같이 2가지 방법이 있습니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;타일을 가로로 배치 하는 경우&lt;/li&gt;
+      &lt;li&gt;타일을 세로로 배치 하는 경우&lt;/li&gt;
+      &lt;li&gt;예를들어서 n이 7인 직사각형은 다음과 같이 채울 수 있습니다.&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104123669-f0c80080-538f-11eb-877c-c24f377e3480.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;직사각형의 가로의 길이 n이 매개변수로 주어질 때, 이 직사각형을 채우는 방법의 수를 return 하는 solution 함수를 완성해주세요.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;제한사항&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;가로의 길이 n은 60,000이하의 자연수 입니다.&lt;/li&gt;
+      &lt;li&gt;경우의 수가 많아 질 수 있으므로, 경우의 수를 1,000,000,007으로 나눈 나머지를 return해주세요.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;코드&quot;&gt;코드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;풀이&lt;/code&gt; : n에 따라 늘어나는 직사각형의 경우의 수를 알아보게 되면 fibonacci 수열로 늘어나게 된다. 따라서 피보나치 수를 구하면 되는 문제이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;prev1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev2&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;prev2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev2&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;prev1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000000007&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;__main__&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Wonryang Heo</name></author><category term="Programmers" /><category term="algorithm" /><category term="fibonacci" /><summary type="html">2xn 타일 문제</summary></entry><entry><title type="html">VScode extension - material theme (vscode custom)</title><link href="https://closetotheworld.github.io/etc/vscode-custom/" rel="alternate" type="text/html" title="VScode extension - material theme (vscode custom)" /><published>2021-01-09T00:00:00+09:00</published><updated>2021-01-10T06:40:00+09:00</updated><id>https://closetotheworld.github.io/etc/vscode-custom</id><content type="html" xml:base="https://closetotheworld.github.io/etc/vscode-custom/">&lt;h3 id=&quot;vs-code&quot;&gt;VS code!&lt;/h3&gt;
+
 &lt;ul&gt;
   &lt;li&gt;내가 가장 좋아하는 에디터이다.&lt;/li&gt;
   &lt;li&gt;일반 테마보다 예쁜 테마와 아이콘을 사용해보고자 커스텀 하는 법을 검색한 내용을 정리한다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;material-theme&quot;&gt;material theme&lt;/h3&gt;
+
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;vscode extension을 click ! 이후 material theme을 검색하면 이와 같은 테마가 나온다.
-  &lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104091848-7467eb80-52c3-11eb-80d3-eefeece3db4a.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104091848-7467eb80-52c3-11eb-80d3-eefeece3db4a.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;extension을 설치한 후 f1을 입력하여 material theme을 적용하면 끝! 본인은 기본테마를 사용한다 . . !&lt;/p&gt;
@@ -16,11 +162,13 @@
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;material-icon-theme&quot;&gt;material Icon theme&lt;/h3&gt;
+
 &lt;ul&gt;
   &lt;li&gt;material theme에 맞게 아이콘들도 material design으로 바꾸어 준다 ! 벌써 갓-개발자가 된 느낌이다.&lt;/li&gt;
   &lt;li&gt;extension에 Material Icon Theme을 검색하면 나온다 !
-  &lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104091888-b133e280-52c3-11eb-8b09-b87112eaf2b9.png&quot; alt=&quot;image&quot; /&gt;&lt;/li&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104091888-b133e280-52c3-11eb-8b09-b87112eaf2b9.png&quot; alt=&quot;image&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="etc" /><category term="vscode" /><category term="custom" /><category term="tutorial" /><summary type="html">VS code! 내가 가장 좋아하는 에디터이다. 일반 테마보다 예쁜 테마와 아이콘을 사용해보고자 커스텀 하는 법을 검색한 내용을 정리한다. material theme vscode extension을 click ! 이후 material theme을 검색하면 이와 같은 테마가 나온다. extension을 설치한 후 f1을 입력하여 material theme을 적용하면 끝! 본인은 기본테마를 사용한다 . . ! material Icon theme material theme에 맞게 아이콘들도 material design으로 바꾸어 준다 ! 벌써 갓-개발자가 된 느낌이다. extension에 Material Icon Theme을 검색하면 나온다 !</summary></entry><entry><title type="html">WSL2 terminal custom</title><link href="https://closetotheworld.github.io/etc/wsl2-custom/" rel="alternate" type="text/html" title="WSL2 terminal custom" /><published>2021-01-09T00:00:00+09:00</published><updated>2021-01-10T07:20:00+09:00</updated><id>https://closetotheworld.github.io/etc/wsl2-custom</id><content type="html" xml:base="https://closetotheworld.github.io/etc/wsl2-custom/">&lt;h3 id=&quot;wsl2&quot;&gt;WSL2?&lt;/h3&gt;
+
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Windows Subsystem Linux&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;윈도우 시스템을 &lt;u&gt;Linux로도&lt;/u&gt; 이용할 수 있는 것!&lt;/li&gt;
@@ -29,31 +177,33 @@
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;terminal을-바꿔보자&quot;&gt;terminal을 바꿔보자&lt;/h3&gt;
+
 &lt;ul&gt;
   &lt;li&gt;MAC에서도 사용하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;oh my zsh&lt;/code&gt;를 설치할 것이다.&lt;/li&gt;
   &lt;li&gt;조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요!&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;우선 먼저 zsh를 다운받아야 합니다..! &lt;a href=&quot;https://github.com/ohmyzsh/wiki/Installing-ZSH&quot;&gt;zsh 다운로드&lt;/a&gt; 링크가 귀찮으신 분들은!&lt;/p&gt;
+    &lt;p&gt;우선 먼저 zsh를 다운받아야 합니다..! &lt;a href=&quot;https://github.com/ohmyzsh/wiki/Installing-ZSH&quot;&gt;zsh 다운로드&lt;/a&gt; « 클릭!&lt;/p&gt;
 
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;zsh
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;zsh
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
     &lt;p&gt;위 명령을 bash에 입력!&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;이후에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;oh my zsh&lt;/code&gt;를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다!&lt;/p&gt;
 
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  sh &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sh &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;위 커맨드로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;oh my zsh&lt;/code&gt;를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다!
-  &lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104092880-2e625600-52ca-11eb-9c34-5ce7375e2619.png&quot; alt=&quot;image&quot; /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104092880-2e625600-52ca-11eb-9c34-5ce7375e2619.png&quot; alt=&quot;image&quot; /&gt;
     &lt;blockquote&gt;
       &lt;p&gt;당연히 YES 겠죠!&lt;/p&gt;
     &lt;/blockquote&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다!
-  &lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104092945-9add5500-52ca-11eb-8339-4048e16dae8f.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104092945-9add5500-52ca-11eb-8339-4048e16dae8f.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
     &lt;blockquote&gt;
       &lt;p&gt;하지만 뭔가 심심하다.. 더 시도해보자!&lt;/p&gt;
@@ -62,9 +212,91 @@
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;powerlevel10k&quot;&gt;Powerlevel10K&lt;/h3&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;오늘은 일찍 잘 예정이므로 내일 포스트. . !&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="etc" /><category term="wsl2" /><category term="terminal" /><category term="custom" /><category term="tutorial" /><summary type="html">WSL2? Windows Subsystem Linux 윈도우 시스템을 Linux로도 이용할 수 있는 것! WSL1보다 2가 조금 더 성능이 좋다고 한다. 리눅스의 terminal을 좋아하는 나로서는 너무 환영! terminal을 바꿔보자 MAC에서도 사용하는 oh my zsh를 설치할 것이다. 조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요! 우선 먼저 zsh를 다운받아야 합니다..! zsh 다운로드 링크가 귀찮으신 분들은! sudo apt install zsh 위 명령을 bash에 입력! 이후에는 oh my zsh를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다! sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; 위 커맨드로 oh my zsh를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다! 당연히 YES 겠죠! 그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다! 하지만 뭔가 심심하다.. 더 시도해보자! Powerlevel10K 오늘은 일찍 잘 예정이므로 내일 포스트. . !</summary></entry><entry><title type="html">2021-01-08</title><link href="https://closetotheworld.github.io/daily/diary/" rel="alternate" type="text/html" title="2021-01-08" /><published>2021-01-08T00:00:00+09:00</published><updated>2021-01-09T07:00:00+09:00</updated><id>https://closetotheworld.github.io/daily/diary</id><content type="html" xml:base="https://closetotheworld.github.io/daily/diary/">&lt;h2 id=&quot;오늘-먹은-것&quot;&gt;오늘 먹은 것&lt;/h2&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Powerlevel10K&lt;/code&gt; 에서는 본인의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;oh my zsh&lt;/code&gt;를 쉽게 커스텀 해 준다!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;powerlevel10k&lt;/code&gt;의 github 주소로 들어가서 따라 해보자!&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;a href=&quot;https://github.com/romkatv/powerlevel10k#oh-my-zsh&quot;&gt;powerlevel10k 클릭&lt;/a&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;내리다보면 이 부분이 보인다! oh my zsh 밑에있는 git 명령어를 복사해주자.&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104301064-8edfd600-550a-11eb-868b-821fb5fb5620.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;이후로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.zshrc&lt;/code&gt; 을 편집기로 열어 ZSH_THEME=”robbyrussell” 부분의 robbyrussell을 위 이미지처럼 powerlevel10k/powerlevel10k 로 바꾸어준다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;그 다음 github 주소에서 밑으로 내리다보면 다음과 같은 폰트파일이 보인다&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104301390-eda54f80-550a-11eb-95e1-376fa09eabf8.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;전부 다운받아 준 뒤 wsl2를 재시작해보자!&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;위 과정을 따라했다면, 마법사가 시작되는데, 터미널에서는 아무리봐도 네모 두 개인 글자를 보고 다이아몬드로 보이냐고 물어본다. 이는 폰트가 적용되지 않았기 때문이다. 자! 폰트설정을 해보자!&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104301601-32c98180-550b-11eb-8b7b-5f4e7ebcda6b.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;위 이미지에서 설정을 눌러주면 vscode든 visual studio든 편집기로 settings.json이 열릴 것이다!&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104301910-86d46600-550b-11eb-8f66-e23619e24b7a.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;쭉 내려와서 본인의 wsl2 profile 부분에 FONT설정을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MesloLGS NF&lt;/code&gt; 로 입력해주자!&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;이후에는 다이아몬드던 데비안로고던 물어보는 로고가 다 잘 표시가 될 것이다! 설정은 본인의 입맛대로 구성하면 된다 :)&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;나의 Termianl&lt;br /&gt;
+ &lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104302124-c307c680-550b-11eb-8c88-a523f77028ae.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Wonryang Heo</name></author><category term="etc" /><category term="wsl2" /><category term="terminal" /><category term="custom" /><category term="tutorial" /><summary type="html">WSL2? Windows Subsystem Linux 윈도우 시스템을 Linux로도 이용할 수 있는 것! WSL1보다 2가 조금 더 성능이 좋다고 한다. 리눅스의 terminal을 좋아하는 나로서는 너무 환영! terminal을 바꿔보자 MAC에서도 사용하는 oh my zsh를 설치할 것이다. 조금 더 예쁜 터미널 .. 완성이 되면 개발이 더 하고싶어질 거에요! 우선 먼저 zsh를 다운받아야 합니다..! zsh 다운로드 « 클릭! sudo apt install zsh 위 명령을 bash에 입력! 이후에는 oh my zsh를 설치하기 위해 아래 명령어를 wsl2 terminal에 입력합니다! sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; 위 커맨드로 oh my zsh를 설치하는 와중에 아래 이미지처럼 default shell을 물어봅니다! 당연히 YES 겠죠! 그렇다면 다음과 같은 화면이 나타나며 default shell이 zsh로 바뀌게 됩니다! 하지만 뭔가 심심하다.. 더 시도해보자! Powerlevel10K Powerlevel10K 에서는 본인의 oh my zsh를 쉽게 커스텀 해 준다! 우선 powerlevel10k의 github 주소로 들어가서 따라 해보자! powerlevel10k 클릭 내리다보면 이 부분이 보인다! oh my zsh 밑에있는 git 명령어를 복사해주자. 이후로 ~/.zshrc 을 편집기로 열어 ZSH_THEME=”robbyrussell” 부분의 robbyrussell을 위 이미지처럼 powerlevel10k/powerlevel10k 로 바꾸어준다. 그 다음 github 주소에서 밑으로 내리다보면 다음과 같은 폰트파일이 보인다 전부 다운받아 준 뒤 wsl2를 재시작해보자! 위 과정을 따라했다면, 마법사가 시작되는데, 터미널에서는 아무리봐도 네모 두 개인 글자를 보고 다이아몬드로 보이냐고 물어본다. 이는 폰트가 적용되지 않았기 때문이다. 자! 폰트설정을 해보자! 위 이미지에서 설정을 눌러주면 vscode든 visual studio든 편집기로 settings.json이 열릴 것이다! 쭉 내려와서 본인의 wsl2 profile 부분에 FONT설정을 MesloLGS NF 로 입력해주자! 이후에는 다이아몬드던 데비안로고던 물어보는 로고가 다 잘 표시가 될 것이다! 설정은 본인의 입맛대로 구성하면 된다 :) 나의 Termianl</summary></entry><entry><title type="html">2021-01-09</title><link href="https://closetotheworld.github.io/daily/210109-diary/" rel="alternate" type="text/html" title="2021-01-09" /><published>2021-01-09T00:00:00+09:00</published><updated>2021-01-10T08:00:00+09:00</updated><id>https://closetotheworld.github.io/daily/210109-diary</id><content type="html" xml:base="https://closetotheworld.github.io/daily/210109-diary/">&lt;h3 id=&quot;다시-구미로-왔다&quot;&gt;다시 구미로 왔다!&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;디지털관의 냄새가 역시 제일 편하다&lt;/li&gt;
+  &lt;li&gt;터미널에서 내려서 바로 연구실로 왔다!&lt;/li&gt;
+  &lt;li&gt;바로 집으로 가면 포스트를 안할 것 같아서..&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;퀄리티-있는-포스트-적기가-어렵다&quot;&gt;퀄리티 있는 포스트 적기가 어렵다&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;아는것 대로 다 적으면 요점이 안 사는 것 같고,,&lt;/li&gt;
+  &lt;li&gt;처음이라 그렇겠지? 많은 포스트를 하게되면 조금 더 괜찮아 질 것 같다&lt;/li&gt;
+  &lt;li&gt;커스텀 포스트를 너무 대충 적은 것 같다. 내일 더 수정해야지&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;이달의-목표&quot;&gt;이달의 목표&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이달 말 자취방을 빼고 본가로 내려간다. 그러면 이제 졸업생으로서 도서관을 못쓴다&lt;/li&gt;
+  &lt;li&gt;빌렸던 책을 빨리 정리하고 포스트화 해놔야겠다!
+    &lt;ul&gt;
+      &lt;li&gt;Go Cookbook&lt;/li&gt;
+      &lt;li&gt;Go in Action&lt;/li&gt;
+      &lt;li&gt;스프링 입문을 위한 자바 객체지향의 원리와 이해&lt;/li&gt;
+      &lt;li&gt;도커 시작&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;오늘도-고생했따-&quot;&gt;오늘도 고생했따 !&lt;/h3&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">다시 구미로 왔다!</summary></entry><entry><title type="html">2021-01-08</title><link href="https://closetotheworld.github.io/daily/210108-diary/" rel="alternate" type="text/html" title="2021-01-08" /><published>2021-01-08T00:00:00+09:00</published><updated>2021-01-09T07:00:00+09:00</updated><id>https://closetotheworld.github.io/daily/210108-diary</id><content type="html" xml:base="https://closetotheworld.github.io/daily/210108-diary/">&lt;h2 id=&quot;오늘-먹은-것&quot;&gt;오늘 먹은 것&lt;/h2&gt;
+
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104018964-09081600-51fe-11eb-9132-a2ed1c15cc4c.png&quot; alt=&quot;image&quot; width=&quot;200&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -72,33 +304,39 @@
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;내일은-다시-구미로&quot;&gt;내일은 다시 구미로&lt;/h2&gt;
+
 &lt;ul&gt;
   &lt;li&gt;다시 가서 열심히 포스트하고 열심히 공부하고&lt;/li&gt;
   &lt;li&gt;얼마 남지않은 연구실에서의 공부 야무지게 끝내자잇&lt;/li&gt;
   &lt;li&gt;오늘도 고생했따!&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">오늘 먹은 것 뒷고기는 항상 옳으시다 내일은 다시 구미로 다시 가서 열심히 포스트하고 열심히 공부하고 얼마 남지않은 연구실에서의 공부 야무지게 끝내자잇 오늘도 고생했따!</summary></entry><entry><title type="html">Golang, 간단히 살펴보자!- Go series(2)</title><link href="https://closetotheworld.github.io/golang/go_series_2/" rel="alternate" type="text/html" title="Golang, 간단히 살펴보자!- Go series(2)" /><published>2021-01-08T00:00:00+09:00</published><updated>2021-01-09T06:50:00+09:00</updated><id>https://closetotheworld.github.io/golang/go_series_2</id><content type="html" xml:base="https://closetotheworld.github.io/golang/go_series_2/">&lt;p&gt;&lt;strong&gt;학습 한 내용&lt;/strong&gt;&lt;/p&gt;
-&lt;ul class=&quot;notice--warning&quot;&gt;
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">오늘 먹은 것</summary></entry><entry><title type="html">Golang, 간단히 살펴보자!- Go series(2)</title><link href="https://closetotheworld.github.io/golang/go_series_2/" rel="alternate" type="text/html" title="Golang, 간단히 살펴보자!- Go series(2)" /><published>2021-01-08T00:00:00+09:00</published><updated>2021-01-09T06:50:00+09:00</updated><id>https://closetotheworld.github.io/golang/go_series_2</id><content type="html" xml:base="https://closetotheworld.github.io/golang/go_series_2/">&lt;p&gt;&lt;strong&gt;학습 한 내용&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
   &lt;li&gt;Go의 흐름&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;golang의-실행흐름&quot;&gt;Golang의 실행흐름&lt;/h3&gt;
+
 &lt;p&gt;Golang의 실행흐름을 알아보자&lt;/p&gt;
+
 &lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.go&lt;/code&gt; 에서 보통 시작한다.
-    &lt;div class=&quot;language-golang highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;go&lt;/span&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.go&lt;/code&gt; 에서 보통 시작한다.&lt;/p&gt;
 
- &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-   &lt;span class=&quot;s&quot;&gt;&quot;log&quot;&lt;/span&gt;
-   &lt;span class=&quot;s&quot;&gt;&quot;os&quot;&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;div class=&quot;language-golang highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;go&lt;/span&gt;
 
- &lt;span class=&quot;k&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-   &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setOutput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Stdout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;log&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;os&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
- &lt;span class=&quot;k&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-   &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wonryang&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setOutput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Stdout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wonryang&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
@@ -106,7 +344,8 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; 이라는 패키지에 구현되어있다.&lt;/li&gt;
   &lt;li&gt;Go의 모든 코드는 패키지에 종속되어야 한다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Golang" /><category term="language" /><category term="tutorial" /><summary type="html">학습 한 내용 Go의 흐름 Golang의 실행흐름 Golang의 실행흐름을 알아보자 main.go 에서 보통 시작한다. # main.go import ( &quot;log&quot; &quot;os&quot; ) func init(){ log.setOutput(os.Stdout) } func main(){ search.Run(&quot;wonryang&quot;) } main 이라는 패키지에 구현되어있다. Go의 모든 코드는 패키지에 종속되어야 한다.</summary></entry><entry><title type="html">2021-01-07</title><link href="https://closetotheworld.github.io/daily/diary/" rel="alternate" type="text/html" title="2021-01-07" /><published>2021-01-07T00:00:00+09:00</published><updated>2021-01-08T06:00:00+09:00</updated><id>https://closetotheworld.github.io/daily/diary</id><content type="html" xml:base="https://closetotheworld.github.io/daily/diary/">&lt;h2 id=&quot;집에-오니-너무-편하당&quot;&gt;집에 오니 너무 편하당&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Golang" /><category term="language" /><category term="tutorial" /><summary type="html">학습 한 내용</summary></entry><entry><title type="html">2021-01-07</title><link href="https://closetotheworld.github.io/daily/210107-diary/" rel="alternate" type="text/html" title="2021-01-07" /><published>2021-01-07T00:00:00+09:00</published><updated>2021-01-08T06:00:00+09:00</updated><id>https://closetotheworld.github.io/daily/210107-diary</id><content type="html" xml:base="https://closetotheworld.github.io/daily/210107-diary/">&lt;h2 id=&quot;집에-오니-너무-편하당&quot;&gt;집에 오니 너무 편하당&lt;/h2&gt;
+
 &lt;ol&gt;
   &lt;li&gt;일단 잘 먹는다&lt;/li&gt;
   &lt;li&gt;부모님 얼굴 매일보니 좋다&lt;/li&gt;
@@ -114,6 +353,7 @@
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;study&quot;&gt;study&lt;/h2&gt;
+
 &lt;ul&gt;
   &lt;li&gt;Golang 실습코드 만드느라 포스팅은 몰아서 해야겠다&lt;/li&gt;
   &lt;li&gt;CS공부한것도 하나씩 올려야지&lt;/li&gt;
@@ -122,7 +362,7 @@
 
 &lt;blockquote&gt;
   &lt;p&gt;오늘도 고생했다!&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">집에 오니 너무 편하당 일단 잘 먹는다 부모님 얼굴 매일보니 좋다 평화롭다 study Golang 실습코드 만드느라 포스팅은 몰아서 해야겠다 CS공부한것도 하나씩 올려야지 아무래도 본가에 와서 노트북만 들고 하려니 더블모니터가 그리워잇 오늘도 고생했다!</summary></entry><entry><title type="html">2021-01-06</title><link href="https://closetotheworld.github.io/daily/diary/" rel="alternate" type="text/html" title="2021-01-06" /><published>2021-01-06T00:00:00+09:00</published><updated>2021-01-07T06:40:00+09:00</updated><id>https://closetotheworld.github.io/daily/diary</id><content type="html" xml:base="https://closetotheworld.github.io/daily/diary/">&lt;h2 id=&quot;오랜만에-집을-왔다&quot;&gt;오랜만에 집을 왔다&lt;/h2&gt;
+&lt;/blockquote&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">집에 오니 너무 편하당</summary></entry><entry><title type="html">2021-01-06</title><link href="https://closetotheworld.github.io/daily/210106-diary/" rel="alternate" type="text/html" title="2021-01-06" /><published>2021-01-06T00:00:00+09:00</published><updated>2021-01-07T06:40:00+09:00</updated><id>https://closetotheworld.github.io/daily/210106-diary</id><content type="html" xml:base="https://closetotheworld.github.io/daily/210106-diary/">&lt;h2 id=&quot;오랜만에-집을-왔다&quot;&gt;오랜만에 집을 왔다&lt;/h2&gt;
 
 &lt;p&gt;얼마만에 집을 온건지, 추석 이후로 오랜만에 본가에 왔다.&lt;br /&gt;
 가족들의 얼굴을 오랜만에 보니 너무 좋다.&lt;br /&gt;
@@ -136,6 +376,7 @@
 나를 너무 몰아세우지 말자&lt;br /&gt;
 열심히 하면 언제든 될 거야&lt;br /&gt;
 간단한 목표&lt;/p&gt;
+
 &lt;blockquote&gt;
   &lt;ol&gt;
     &lt;li&gt;1일 1커밋 하기(포스트만 하루에 잘 써도 가능할 것 같다.)&lt;/li&gt;
@@ -154,86 +395,4 @@
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;꿈&lt;/code&gt;을 향해&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;나&lt;/code&gt;를 잊지 않기&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;주변사람&lt;/code&gt; 챙기기&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">오랜만에 집을 왔다 얼마만에 집을 온건지, 추석 이후로 오랜만에 본가에 왔다. 가족들의 얼굴을 오랜만에 보니 너무 좋다. 작년 하반기에는 취업준비니 개인 프로젝트니 공부니 나 자신을 너무 채찍질 했던 것 같다. 그래도 주변 사람과 가족은 챙기면서 살아야지. 다잡은 목표 취업준비를 열심히 하되 나를 놓지말자. 내가 좋아하는 것, 옷이나 클래식음악 등등 쉴 때는 잘 쉬자 나를 너무 몰아세우지 말자 열심히 하면 언제든 될 거야 간단한 목표 1일 1커밋 하기(포스트만 하루에 잘 써도 가능할 것 같다.) 공부를 하더라도 원리 꼭 되짚고 가기 나를 너무 몰아세우지 않기 가족들의 안부 자주 묻기 올해도 화이팅 목표들을 잃지 않고! 자신감을 가지고 꿈을 향해 나를 잊지 않기 주변사람 챙기기</summary></entry><entry><title type="html">git블로그 시작!!!</title><link href="https://closetotheworld.github.io/daily/post/" rel="alternate" type="text/html" title="git블로그 시작!!!" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T17:00:00+09:00</updated><id>https://closetotheworld.github.io/daily/post</id><content type="html" xml:base="https://closetotheworld.github.io/daily/post/">&lt;p&gt;첫 블로그의 첫 글을 시작했따!&lt;/p&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">시작이다!</summary></entry><entry><title type="html">TCP와 UDP ?</title><link href="https://closetotheworld.github.io/network/post2/" rel="alternate" type="text/html" title="TCP와 UDP ?" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T19:00:00+09:00</updated><id>https://closetotheworld.github.io/network/post2</id><content type="html" xml:base="https://closetotheworld.github.io/network/post2/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;개인적으로 정리한 의견임다!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;네트워크에서의-단어들&quot;&gt;네트워크에서의 단어들&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로토콜&lt;/code&gt; -&amp;gt; 네트워크의 통신 규칙&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;네트워크 아키텍처&lt;/code&gt; -&amp;gt; 프로토콜 여러개를 조합한 것&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;호스트&lt;/code&gt; -&amp;gt; TCP/IP로 통신하는 각종 네트워크 기기 전반.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;그래서-tcp가-뭔데&quot;&gt;그래서 TCP가 뭔데?&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;신뢰성 있는 바이트 스트림을 &lt;u&gt;전송하고 받는 것&lt;/u&gt;&lt;/li&gt;
-  &lt;li&gt;소켓이라는 종단점을 생성함으로서 이루어짐.&lt;/li&gt;
-  &lt;li&gt;연결 설정
-    &lt;ul&gt;
-      &lt;li&gt;3-way handshake&lt;br /&gt;
-&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/103637860-73674f00-4f8f-11eb-9952-c1374422a947.png&quot; alt=&quot;image&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;전이중(전송이 양 방향으로 가능), 점대점(2개의 종단점) 방식.&lt;/li&gt;
-  &lt;li&gt;멀티캐스팅, 브로드캐스팅 미지원&lt;/li&gt;
-  &lt;li&gt;종료
-    &lt;ul&gt;
-      &lt;li&gt;4-way handshake&lt;br /&gt;
-&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/103637872-78c49980-4f8f-11eb-9bb1-596a84ef3c26.png&quot; alt=&quot;image&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;그럼-udp는&quot;&gt;그럼 UDP는?&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;비연결형 프로토콜&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;흐름제어, 오류제어, 손상세그먼트의 수신에 대한 &lt;u&gt;재전송을 하지 않음&lt;/u&gt;&lt;/li&gt;
-  &lt;li&gt;대표적으로 DNS가 있다! (가벼워서)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Network" /><category term="CS" /><category term="interview" /><summary type="html">개인적으로 정리한 의견임다! 네트워크에서의 단어들 프로토콜 -&amp;gt; 네트워크의 통신 규칙 네트워크 아키텍처 -&amp;gt; 프로토콜 여러개를 조합한 것 호스트 -&amp;gt; TCP/IP로 통신하는 각종 네트워크 기기 전반. 그래서 TCP가 뭔데? 신뢰성 있는 바이트 스트림을 전송하고 받는 것 소켓이라는 종단점을 생성함으로서 이루어짐. 연결 설정 3-way handshake 전이중(전송이 양 방향으로 가능), 점대점(2개의 종단점) 방식. 멀티캐스팅, 브로드캐스팅 미지원 종료 4-way handshake 그럼 UDP는? 비연결형 프로토콜 흐름제어, 오류제어, 손상세그먼트의 수신에 대한 재전송을 하지 않음 대표적으로 DNS가 있다! (가벼워서)</summary></entry><entry><title type="html">Golang와의 첫 만남 - Go series(1)</title><link href="https://closetotheworld.github.io/golang/post3/" rel="alternate" type="text/html" title="Golang와의 첫 만남 - Go series(1)" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-07T02:22:00+09:00</updated><id>https://closetotheworld.github.io/golang/post3</id><content type="html" xml:base="https://closetotheworld.github.io/golang/post3/">&lt;p&gt;&lt;strong&gt;학습 한 내용&lt;/strong&gt;&lt;/p&gt;
-&lt;ul class=&quot;notice--warning&quot;&gt;
-  &lt;li&gt;Go의 특징&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;golang은&quot;&gt;Golang은?&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고루틴&lt;/code&gt;을 활용한 동시성 프로그래밍
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;golang의-특징&quot;&gt;Golang의 특징&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;개발속도
-    &lt;ul&gt;
-      &lt;li&gt;Java나 C는 컴파일러들이 전체 라이브러리의 의존성을 탐색하지만 GO 컴파일러는 직접참조 라이브러리의 의존성만 해석함.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;동시성
-    &lt;ul&gt;
-      &lt;li&gt;Golang의 강력한 기능 중 하나.&lt;/li&gt;
-      &lt;li&gt;고루틴(goroutine)은 스레드와 유사하지만 더 적은 메모리를 소비하며 더 적은 양의 코드로 구현 가능.
-        &lt;ul&gt;
-          &lt;li&gt;프로그램의 진입점을 비롯하여 다른 고루틴과 함께 동시에 실행되는 함수.&lt;/li&gt;
-          &lt;li&gt;Go는 여러 개의 고루틴이 하나의 스레드에서 동작한다.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;채널(channel)은 내장된 동기화 기능을 이용해서 고루틴 간의 형식화된 메세지를 공유할 수 있는 데이터 구조이다.
-        &lt;ul&gt;
-          &lt;li&gt;공유 메모리 접근을 허용하는 프로그래밍 언어에서 발생하는 문제들을 손쉽게 피할 수 있음.&lt;/li&gt;
-          &lt;li&gt;동시에 발생하는 수정요청으로부터 데이터를 안전하게 보호하기 위한 패턴을 제공함.&lt;/li&gt;
-          &lt;li&gt;채널을 통해 어느 한 시점에 하나의 고루틴만이 데이터를 수정할 수 있는 패턴임.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;타입 시스템&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;메모리 관리(GC)
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;요약&quot;&gt;요약&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Golang은 모던하고 빠르며 강력한 표준 라이브러리를 제공하는 언어이다.&lt;br /&gt;
-Go는 동시성 기능을 자체적으로 내장한다.&lt;br /&gt;
-Go는 코드 재사용을 위한 Block으로서 인터페이스를 활용한다.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Wonryang Heo</name></author><category term="Golang" /><category term="language" /><category term="tutorial" /><summary type="html">학습 한 내용 Go의 특징 Golang은? 고루틴을 활용한 동시성 프로그래밍 Golang의 특징 개발속도 Java나 C는 컴파일러들이 전체 라이브러리의 의존성을 탐색하지만 GO 컴파일러는 직접참조 라이브러리의 의존성만 해석함. 동시성 Golang의 강력한 기능 중 하나. 고루틴(goroutine)은 스레드와 유사하지만 더 적은 메모리를 소비하며 더 적은 양의 코드로 구현 가능. 프로그램의 진입점을 비롯하여 다른 고루틴과 함께 동시에 실행되는 함수. Go는 여러 개의 고루틴이 하나의 스레드에서 동작한다. 채널(channel)은 내장된 동기화 기능을 이용해서 고루틴 간의 형식화된 메세지를 공유할 수 있는 데이터 구조이다. 공유 메모리 접근을 허용하는 프로그래밍 언어에서 발생하는 문제들을 손쉽게 피할 수 있음. 동시에 발생하는 수정요청으로부터 데이터를 안전하게 보호하기 위한 패턴을 제공함. 채널을 통해 어느 한 시점에 하나의 고루틴만이 데이터를 수정할 수 있는 패턴임. 타입 시스템 메모리 관리(GC) 요약 Golang은 모던하고 빠르며 강력한 표준 라이브러리를 제공하는 언어이다. Go는 동시성 기능을 자체적으로 내장한다. Go는 코드 재사용을 위한 Block으로서 인터페이스를 활용한다.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">오랜만에 집을 왔다</summary></entry></feed>

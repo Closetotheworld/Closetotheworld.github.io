@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Golang와의 첫 만남 - Go series(1) - closetotheworld’s devlog</title>
-<meta name="description" content="학습 한 내용    Go의 특징   Golang은?    고루틴을 활용한 동시성 프로그래밍    Golang의 특징    개발속도            Java나 C는 컴파일러들이 전체 라이브러리의 의존성을 탐색하지만 GO 컴파일러는 직접참조 라이브러리의 의존성만 해석함.           동시성            Golang의 강력한 기능 중 하나.       고루틴(goroutine)은 스레드와 유사하지만 더 적은 메모리를 소비하며 더 적은 양의 코드로 구현 가능.                    프로그램의 진입점을 비롯하여 다른 고루틴과 함께 동시에 실행되는 함수.           Go는 여러 개의 고루틴이 하나의 스레드에서 동작한다.                       채널(channel)은 내장된 동기화 기능을 이용해서 고루틴 간의 형식화된 메세지를 공유할 수 있는 데이터 구조이다.                    공유 메모리 접근을 허용하는 프로그래밍 언어에서 발생하는 문제들을 손쉽게 피할 수 있음.           동시에 발생하는 수정요청으로부터 데이터를 안전하게 보호하기 위한 패턴을 제공함.           채널을 통해 어느 한 시점에 하나의 고루틴만이 데이터를 수정할 수 있는 패턴임.                                타입 시스템      메모리 관리(GC)    요약    Golang은 모던하고 빠르며 강력한 표준 라이브러리를 제공하는 언어이다. Go는 동시성 기능을 자체적으로 내장한다. Go는 코드 재사용을 위한 Block으로서 인터페이스를 활용한다.">
+<meta name="description" content="학습 한 내용">
 
 
   <meta name="author" content="Wonryang Heo">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://closetotheworld.github.io/golang/post3/">
 
 
-  <meta property="og:description" content="학습 한 내용    Go의 특징   Golang은?    고루틴을 활용한 동시성 프로그래밍    Golang의 특징    개발속도            Java나 C는 컴파일러들이 전체 라이브러리의 의존성을 탐색하지만 GO 컴파일러는 직접참조 라이브러리의 의존성만 해석함.           동시성            Golang의 강력한 기능 중 하나.       고루틴(goroutine)은 스레드와 유사하지만 더 적은 메모리를 소비하며 더 적은 양의 코드로 구현 가능.                    프로그램의 진입점을 비롯하여 다른 고루틴과 함께 동시에 실행되는 함수.           Go는 여러 개의 고루틴이 하나의 스레드에서 동작한다.                       채널(channel)은 내장된 동기화 기능을 이용해서 고루틴 간의 형식화된 메세지를 공유할 수 있는 데이터 구조이다.                    공유 메모리 접근을 허용하는 프로그래밍 언어에서 발생하는 문제들을 손쉽게 피할 수 있음.           동시에 발생하는 수정요청으로부터 데이터를 안전하게 보호하기 위한 패턴을 제공함.           채널을 통해 어느 한 시점에 하나의 고루틴만이 데이터를 수정할 수 있는 패턴임.                                타입 시스템      메모리 관리(GC)    요약    Golang은 모던하고 빠르며 강력한 표준 라이브러리를 제공하는 언어이다. Go는 동시성 기능을 자체적으로 내장한다. Go는 코드 재사용을 위한 Block으로서 인터페이스를 활용한다.">
+  <meta property="og:description" content="학습 한 내용">
 
 
 
@@ -323,16 +323,22 @@
   <label for="ac-toc">See more</label>
   <ul class="nav__items" id="category_tag_menu">
       <li>
-            전체 글 수 <u>9</u> 개
+            전체 글 수 <u>13</u> 개
       </li>
       <li>
-        <span class="nav__sub-title">Language</span>
+        <span class="nav__sub-title">Let's study hard!</span>
             <ul>
                 
                     
                     
                     
+                    
+                    
+                    
                 
+                    
+                    
+                    
                     
                     
                     
@@ -342,8 +348,39 @@
                         <li><a href="/categories/golang" class="">golang (2)</a></li>
                     
                     
+                    
+                    
+                    
                 
                     
+                    
+                    
+                    
+                    
+                    
+                        <li><a href="/categories/etc" class="">etc (2)</a></li>
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                        <li><a href="/categories/linux" class="">linux (1)</a></li>
                     
                     
                 
@@ -356,6 +393,12 @@
                 
                     
                         <li><a href="/categories/network" class="">network (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
                     
                 
                     
@@ -375,19 +418,42 @@
                 
                     
                 
+                    
+                        <li><a href="/categories/programmers" class="">프로그래머스 (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
             </ul>
 
         <span class="nav__sub-title">daily</span>
             <ul>
                 
                     
-                        <li><a href="/categories/daily" class="">일상끄적 (4)</a></li>
+                        <li><a href="/categories/daily" class="">일상끄적 (5)</a></li>
+                    
                     
                 
                     
-                
                     
                 
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                        <li><a href="/categories/reviews" class="">something reviews (1)</a></li>
+                    
+                
+                    
                     
                 
             </ul>
@@ -404,7 +470,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Golang와의 첫 만남 - Go series(1)">
-    <meta itemprop="description" content="학습 한 내용  Go의 특징Golang은?  고루틴을 활용한 동시성 프로그래밍Golang의 특징  개발속도          Java나 C는 컴파일러들이 전체 라이브러리의 의존성을 탐색하지만 GO 컴파일러는 직접참조 라이브러리의 의존성만 해석함.        동시성          Golang의 강력한 기능 중 하나.      고루틴(goroutine)은 스레드와 유사하지만 더 적은 메모리를 소비하며 더 적은 양의 코드로 구현 가능.                  프로그램의 진입점을 비롯하여 다른 고루틴과 함께 동시에 실행되는 함수.          Go는 여러 개의 고루틴이 하나의 스레드에서 동작한다.                    채널(channel)은 내장된 동기화 기능을 이용해서 고루틴 간의 형식화된 메세지를 공유할 수 있는 데이터 구조이다.                  공유 메모리 접근을 허용하는 프로그래밍 언어에서 발생하는 문제들을 손쉽게 피할 수 있음.          동시에 발생하는 수정요청으로부터 데이터를 안전하게 보호하기 위한 패턴을 제공함.          채널을 통해 어느 한 시점에 하나의 고루틴만이 데이터를 수정할 수 있는 패턴임.                          타입 시스템    메모리 관리(GC)요약  Golang은 모던하고 빠르며 강력한 표준 라이브러리를 제공하는 언어이다.Go는 동시성 기능을 자체적으로 내장한다.Go는 코드 재사용을 위한 Block으로서 인터페이스를 활용한다.">
+    <meta itemprop="description" content="학습 한 내용">
     <meta itemprop="datePublished" content="2021-01-05T00:00:00+09:00">
     <meta itemprop="dateModified" content="2021-01-07T02:22:00+09:00">
 
@@ -471,17 +537,20 @@
           </aside>
         
         <p><strong>학습 한 내용</strong></p>
-<ul class="notice--warning">
+
+<ul>
   <li>Go의 특징</li>
 </ul>
 
 <h3 id="golang은">Golang은?</h3>
+
 <ul>
   <li><code class="language-plaintext highlighter-rouge">고루틴</code>을 활용한 동시성 프로그래밍
 <br /></li>
 </ul>
 
 <h3 id="golang의-특징">Golang의 특징</h3>
+
 <ul>
   <li>개발속도
     <ul>
@@ -506,14 +575,13 @@
       </li>
     </ul>
   </li>
-  <li>
-    <p>타입 시스템</p>
-  </li>
+  <li>타입 시스템</li>
   <li>메모리 관리(GC)
 <br /></li>
 </ul>
 
 <h3 id="요약">요약</h3>
+
 <blockquote>
   <p>Golang은 모던하고 빠르며 강력한 표준 라이브러리를 제공하는 언어이다.<br />
 Go는 동시성 기능을 자체적으로 내장한다.<br />
@@ -547,7 +615,7 @@ Go는 코드 재사용을 위한 Block으로서 인터페이스를 활용한다.
 ">Previous</a>
     
     
-      <a href="/daily/diary/" class="pagination--pager" title="2021-01-06
+      <a href="/daily/210106-diary/" class="pagination--pager" title="2021-01-06
 ">Next</a>
     
   </nav>
@@ -571,32 +639,88 @@ Go는 코드 재사용을 위한 Block으로서 인터페이스를 활용한다.
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     <h2 class="archive__item-title" itemprop="headline">
       
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.09</p>
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.12</p>
       
       
-        <a href="/etc/wsl2-custom/" rel="permalink">WSL2 terminal custom
+        <a href="/linux/centos-user-config/" rel="permalink">CentOS 7 user 생성과 sudoer
 </a>
       
 
       
         
         <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#etc" class="page__taxonomy-item-category" rel="tag">etc</a>
+            <span itemprop="keywords"><a href="/categories/#linux" class="page__taxonomy-item-category" rel="tag">linux</a>
                     
                     
-                    <a href="/tags/#custom" class="page__taxonomy-item-tag" rel="tag">custom</a><span class="sep"> </span>
+                    <a href="/tags/#centos7" class="page__taxonomy-item-tag" rel="tag">CentOS7</a>
+                
+            </span>
+        </span>
+    </h2>
+    
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.11</p>
+      
+      
+        <a href="/reviews/vcnc-coding-test-review/" rel="permalink">VCNC 코딩테스트 후기
+</a>
+      
+
+      
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#reviews" class="page__taxonomy-item-category" rel="tag">Reviews</a>
+                    
+                    
+                    <a href="/tags/#codingtest" class="page__taxonomy-item-tag" rel="tag">codingtest</a><span class="sep"> </span>
                 
                     
                     
-                    <a href="/tags/#terminal" class="page__taxonomy-item-tag" rel="tag">terminal</a><span class="sep"> </span>
+                    <a href="/tags/#lookingforajob" class="page__taxonomy-item-tag" rel="tag">lookingforajob</a>
+                
+            </span>
+        </span>
+    </h2>
+    
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.10</p>
+      
+      
+        <a href="/programmers/programmers-2xn/" rel="permalink">Programmers level-3 (2xn 타일)
+</a>
+      
+
+      
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#programmers" class="page__taxonomy-item-category" rel="tag">Programmers</a>
+                    
+                    
+                    <a href="/tags/#algorithm" class="page__taxonomy-item-tag" rel="tag">algorithm</a><span class="sep"> </span>
                 
                     
                     
-                    <a href="/tags/#tutorial" class="page__taxonomy-item-tag" rel="tag">tutorial</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#wsl2" class="page__taxonomy-item-tag" rel="tag">wsl2</a>
+                    <a href="/tags/#fibonacci" class="page__taxonomy-item-tag" rel="tag">fibonacci</a>
                 
             </span>
         </span>
@@ -616,79 +740,7 @@ Go는 코드 재사용을 위한 Block으로서 인터페이스를 활용한다.
       <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.09</p>
       
       
-        <a href="/etc/vscode-custom/" rel="permalink">VScode extension - material theme (vscode custom)
-</a>
-      
-
-      
-        
-        <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#etc" class="page__taxonomy-item-category" rel="tag">etc</a>
-                    
-                    
-                    <a href="/tags/#custom" class="page__taxonomy-item-tag" rel="tag">custom</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#tutorial" class="page__taxonomy-item-tag" rel="tag">tutorial</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#vscode" class="page__taxonomy-item-tag" rel="tag">vscode</a>
-                
-            </span>
-        </span>
-    </h2>
-    
-  </article>
-</div>
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    <h2 class="archive__item-title" itemprop="headline">
-      
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.08</p>
-      
-      
-        <a href="/golang/go_series_2/" rel="permalink">Golang, 간단히 살펴보자!- Go series(2)
-</a>
-      
-
-      
-        
-        <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#golang" class="page__taxonomy-item-category" rel="tag">Golang</a>
-                    
-                    
-                    <a href="/tags/#language" class="page__taxonomy-item-tag" rel="tag">language</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#tutorial" class="page__taxonomy-item-tag" rel="tag">tutorial</a>
-                
-            </span>
-        </span>
-    </h2>
-    
-  </article>
-</div>
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    <h2 class="archive__item-title" itemprop="headline">
-      
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.08</p>
-      
-      
-        <a href="/daily/diary/" rel="permalink">2021-01-08
+        <a href="/daily/210109-diary/" rel="permalink">2021-01-09
 </a>
       
 

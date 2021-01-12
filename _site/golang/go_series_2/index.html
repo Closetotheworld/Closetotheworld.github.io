@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Golang, 간단히 살펴보자!- Go series(2) - closetotheworld’s devlog</title>
-<meta name="description" content="학습 한 내용    Go의 흐름   Golang의 실행흐름 Golang의 실행흐름을 알아보자    main.go 에서 보통 시작한다.      # main.go   import (    &quot;log&quot;    &quot;os&quot;  )   func init(){    log.setOutput(os.Stdout)  }   func main(){    search.Run(&quot;wonryang&quot;)  }              main 이라는 패키지에 구현되어있다.   Go의 모든 코드는 패키지에 종속되어야 한다.">
+<meta name="description" content="학습 한 내용">
 
 
   <meta name="author" content="Wonryang Heo">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://closetotheworld.github.io/golang/go_series_2/">
 
 
-  <meta property="og:description" content="학습 한 내용    Go의 흐름   Golang의 실행흐름 Golang의 실행흐름을 알아보자    main.go 에서 보통 시작한다.      # main.go   import (    &quot;log&quot;    &quot;os&quot;  )   func init(){    log.setOutput(os.Stdout)  }   func main(){    search.Run(&quot;wonryang&quot;)  }              main 이라는 패키지에 구현되어있다.   Go의 모든 코드는 패키지에 종속되어야 한다.">
+  <meta property="og:description" content="학습 한 내용">
 
 
 
@@ -323,16 +323,22 @@
   <label for="ac-toc">See more</label>
   <ul class="nav__items" id="category_tag_menu">
       <li>
-            전체 글 수 <u>9</u> 개
+            전체 글 수 <u>13</u> 개
       </li>
       <li>
-        <span class="nav__sub-title">Language</span>
+        <span class="nav__sub-title">Let's study hard!</span>
             <ul>
                 
                     
                     
                     
+                    
+                    
+                    
                 
+                    
+                    
+                    
                     
                     
                     
@@ -342,8 +348,39 @@
                         <li><a href="/categories/golang" class="">golang (2)</a></li>
                     
                     
+                    
+                    
+                    
                 
                     
+                    
+                    
+                    
+                    
+                    
+                        <li><a href="/categories/etc" class="">etc (2)</a></li>
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                        <li><a href="/categories/linux" class="">linux (1)</a></li>
                     
                     
                 
@@ -356,6 +393,12 @@
                 
                     
                         <li><a href="/categories/network" class="">network (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
                     
                 
                     
@@ -375,19 +418,42 @@
                 
                     
                 
+                    
+                        <li><a href="/categories/programmers" class="">프로그래머스 (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
             </ul>
 
         <span class="nav__sub-title">daily</span>
             <ul>
                 
                     
-                        <li><a href="/categories/daily" class="">일상끄적 (4)</a></li>
+                        <li><a href="/categories/daily" class="">일상끄적 (5)</a></li>
+                    
                     
                 
                     
-                
                     
                 
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                        <li><a href="/categories/reviews" class="">something reviews (1)</a></li>
+                    
+                
+                    
                     
                 
             </ul>
@@ -404,7 +470,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Golang, 간단히 살펴보자!- Go series(2)">
-    <meta itemprop="description" content="학습 한 내용  Go의 흐름Golang의 실행흐름Golang의 실행흐름을 알아보자  main.go 에서 보통 시작한다.     # main.go import (   &quot;log&quot;   &quot;os&quot; ) func init(){   log.setOutput(os.Stdout) } func main(){   search.Run(&quot;wonryang&quot;) }        main 이라는 패키지에 구현되어있다.  Go의 모든 코드는 패키지에 종속되어야 한다.">
+    <meta itemprop="description" content="학습 한 내용">
     <meta itemprop="datePublished" content="2021-01-08T00:00:00+09:00">
     <meta itemprop="dateModified" content="2021-01-09T06:50:00+09:00">
 
@@ -471,28 +537,33 @@
           </aside>
         
         <p><strong>학습 한 내용</strong></p>
-<ul class="notice--warning">
+
+<ul>
   <li>Go의 흐름</li>
 </ul>
 
 <h3 id="golang의-실행흐름">Golang의 실행흐름</h3>
+
 <p>Golang의 실행흐름을 알아보자</p>
+
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">main.go</code> 에서 보통 시작한다.
-    <div class="language-golang highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="err">#</span> <span class="n">main</span><span class="o">.</span><span class="k">go</span>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">main.go</code> 에서 보통 시작한다.</p>
 
- <span class="k">import</span> <span class="p">(</span>
-   <span class="s">"log"</span>
-   <span class="s">"os"</span>
- <span class="p">)</span>
+    <div class="language-golang highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span> <span class="n">main</span><span class="o">.</span><span class="k">go</span>
 
- <span class="k">func</span> <span class="n">init</span><span class="p">(){</span>
-   <span class="n">log</span><span class="o">.</span><span class="n">setOutput</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Stdout</span><span class="p">)</span>
- <span class="p">}</span>
+<span class="k">import</span> <span class="p">(</span>
+  <span class="s">"log"</span>
+  <span class="s">"os"</span>
+<span class="p">)</span>
 
- <span class="k">func</span> <span class="n">main</span><span class="p">(){</span>
-   <span class="n">search</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="s">"wonryang"</span><span class="p">)</span>
- <span class="p">}</span>
+<span class="k">func</span> <span class="n">init</span><span class="p">(){</span>
+  <span class="n">log</span><span class="o">.</span><span class="n">setOutput</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Stdout</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">(){</span>
+  <span class="n">search</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="s">"wonryang"</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -501,7 +572,6 @@
   <li><code class="language-plaintext highlighter-rouge">main</code> 이라는 패키지에 구현되어있다.</li>
   <li>Go의 모든 코드는 패키지에 종속되어야 한다.</li>
 </ul>
-
 
         
       </section>
@@ -526,7 +596,7 @@
       
   <nav class="pagination">
     
-      <a href="/daily/diary/" class="pagination--pager" title="2021-01-08
+      <a href="/daily/210108-diary/" class="pagination--pager" title="2021-01-08
 ">Previous</a>
     
     
@@ -554,32 +624,88 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     <h2 class="archive__item-title" itemprop="headline">
       
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.09</p>
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.12</p>
       
       
-        <a href="/etc/wsl2-custom/" rel="permalink">WSL2 terminal custom
+        <a href="/linux/centos-user-config/" rel="permalink">CentOS 7 user 생성과 sudoer
 </a>
       
 
       
         
         <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#etc" class="page__taxonomy-item-category" rel="tag">etc</a>
+            <span itemprop="keywords"><a href="/categories/#linux" class="page__taxonomy-item-category" rel="tag">linux</a>
                     
                     
-                    <a href="/tags/#custom" class="page__taxonomy-item-tag" rel="tag">custom</a><span class="sep"> </span>
+                    <a href="/tags/#centos7" class="page__taxonomy-item-tag" rel="tag">CentOS7</a>
+                
+            </span>
+        </span>
+    </h2>
+    
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.11</p>
+      
+      
+        <a href="/reviews/vcnc-coding-test-review/" rel="permalink">VCNC 코딩테스트 후기
+</a>
+      
+
+      
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#reviews" class="page__taxonomy-item-category" rel="tag">Reviews</a>
+                    
+                    
+                    <a href="/tags/#codingtest" class="page__taxonomy-item-tag" rel="tag">codingtest</a><span class="sep"> </span>
                 
                     
                     
-                    <a href="/tags/#terminal" class="page__taxonomy-item-tag" rel="tag">terminal</a><span class="sep"> </span>
+                    <a href="/tags/#lookingforajob" class="page__taxonomy-item-tag" rel="tag">lookingforajob</a>
+                
+            </span>
+        </span>
+    </h2>
+    
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.10</p>
+      
+      
+        <a href="/programmers/programmers-2xn/" rel="permalink">Programmers level-3 (2xn 타일)
+</a>
+      
+
+      
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#programmers" class="page__taxonomy-item-category" rel="tag">Programmers</a>
+                    
+                    
+                    <a href="/tags/#algorithm" class="page__taxonomy-item-tag" rel="tag">algorithm</a><span class="sep"> </span>
                 
                     
                     
-                    <a href="/tags/#tutorial" class="page__taxonomy-item-tag" rel="tag">tutorial</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#wsl2" class="page__taxonomy-item-tag" rel="tag">wsl2</a>
+                    <a href="/tags/#fibonacci" class="page__taxonomy-item-tag" rel="tag">fibonacci</a>
                 
             </span>
         </span>
@@ -599,75 +725,7 @@
       <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.09</p>
       
       
-        <a href="/etc/vscode-custom/" rel="permalink">VScode extension - material theme (vscode custom)
-</a>
-      
-
-      
-        
-        <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#etc" class="page__taxonomy-item-category" rel="tag">etc</a>
-                    
-                    
-                    <a href="/tags/#custom" class="page__taxonomy-item-tag" rel="tag">custom</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#tutorial" class="page__taxonomy-item-tag" rel="tag">tutorial</a><span class="sep"> </span>
-                
-                    
-                    
-                    <a href="/tags/#vscode" class="page__taxonomy-item-tag" rel="tag">vscode</a>
-                
-            </span>
-        </span>
-    </h2>
-    
-  </article>
-</div>
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    <h2 class="archive__item-title" itemprop="headline">
-      
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.08</p>
-      
-      
-        <a href="/daily/diary/" rel="permalink">2021-01-08
-</a>
-      
-
-      
-        
-        <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#daily" class="page__taxonomy-item-category" rel="tag">daily</a>
-                    
-                    
-                    <a href="/tags/#diary" class="page__taxonomy-item-tag" rel="tag">diary</a>
-                
-            </span>
-        </span>
-    </h2>
-    
-  </article>
-</div>
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    <h2 class="archive__item-title" itemprop="headline">
-      
-      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> 2021.01.07</p>
-      
-      
-        <a href="/daily/diary/" rel="permalink">2021-01-07
+        <a href="/daily/210109-diary/" rel="permalink">2021-01-09
 </a>
       
 
