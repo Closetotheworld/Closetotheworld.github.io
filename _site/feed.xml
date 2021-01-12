@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-12T21:20:36+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">CentOS 7 user 생성과 sudoer</title><link href="https://closetotheworld.github.io/linux/centos-user-config/" rel="alternate" type="text/html" title="CentOS 7 user 생성과 sudoer" /><published>2021-01-12T00:00:00+09:00</published><updated>2021-01-13T04:50:00+09:00</updated><id>https://closetotheworld.github.io/linux/centos-user-config</id><content type="html" xml:base="https://closetotheworld.github.io/linux/centos-user-config/">&lt;h3 id=&quot;wheel과-sudoer&quot;&gt;wheel과 sudoer&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-12T21:30:39+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">CentOS 7 user 생성과 sudoer</title><link href="https://closetotheworld.github.io/linux/centos-user-config/" rel="alternate" type="text/html" title="CentOS 7 user 생성과 sudoer" /><published>2021-01-12T00:00:00+09:00</published><updated>2021-01-13T04:50:00+09:00</updated><id>https://closetotheworld.github.io/linux/centos-user-config</id><content type="html" xml:base="https://closetotheworld.github.io/linux/centos-user-config/">&lt;h3 id=&quot;wheel과-sudoer&quot;&gt;wheel과 sudoer&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -57,8 +57,9 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;위와같이 설정하면 sudoer이라도 로그인을 못하는것을 볼 수 있다
-&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104313802-eaff2600-551b-11eb-9063-f78a60e7c169.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;위와같이 설정하면 sudoer이라도 로그인을 못하는것을 볼 수 있다&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104313802-eaff2600-551b-11eb-9063-f78a60e7c169.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="linux" /><category term="CentOS7" /><summary type="html">wheel과 sudoer</summary></entry><entry><title type="html">VCNC 코딩테스트 후기</title><link href="https://closetotheworld.github.io/reviews/vcnc-coding-test-review/" rel="alternate" type="text/html" title="VCNC 코딩테스트 후기" /><published>2021-01-11T00:00:00+09:00</published><updated>2021-01-12T06:40:00+09:00</updated><id>https://closetotheworld.github.io/reviews/vcnc-coding-test-review</id><content type="html" xml:base="https://closetotheworld.github.io/reviews/vcnc-coding-test-review/">&lt;h3 id=&quot;vcnc&quot;&gt;VCNC?&lt;/h3&gt;
 

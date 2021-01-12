@@ -57,4 +57,5 @@ last_modified_at: 2021-01-12T19:50:00
   ```
 
 - 위와같이 설정하면 sudoer이라도 로그인을 못하는것을 볼 수 있다
+
   ![image](https://user-images.githubusercontent.com/37994634/104313802-eaff2600-551b-11eb-9063-f78a60e7c169.png){: width:250 height:250}
