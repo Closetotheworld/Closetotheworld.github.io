@@ -1,4 +1,181 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-12T21:30:39+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">CentOS 7 user 생성과 sudoer</title><link href="https://closetotheworld.github.io/linux/centos-user-config/" rel="alternate" type="text/html" title="CentOS 7 user 생성과 sudoer" /><published>2021-01-12T00:00:00+09:00</published><updated>2021-01-13T04:50:00+09:00</updated><id>https://closetotheworld.github.io/linux/centos-user-config</id><content type="html" xml:base="https://closetotheworld.github.io/linux/centos-user-config/">&lt;h3 id=&quot;wheel과-sudoer&quot;&gt;wheel과 sudoer&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-13T19:05:46+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">Programmers level-3 (kakao 2018 추석트래픽)</title><link href="https://closetotheworld.github.io/programmers/programmers-kakao-2018-thanksgiving/" rel="alternate" type="text/html" title="Programmers level-3 (kakao 2018 추석트래픽)" /><published>2021-01-13T00:00:00+09:00</published><updated>2021-01-14T03:40:00+09:00</updated><id>https://closetotheworld.github.io/programmers/programmers-kakao-2018-thanksgiving</id><content type="html" xml:base="https://closetotheworld.github.io/programmers/programmers-kakao-2018-thanksgiving/">&lt;h2 id=&quot;추석-트래픽&quot;&gt;추석 트래픽&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;문제&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;이번 추석에도 시스템 장애가 없는 명절을 보내고 싶은 어피치는 서버를 증설해야 할지 고민이다. 장애 대비용 서버 증설 여부를 결정하기 위해 작년 추석 기간인 9월 15일 로그 데이터를 분석한 후 초당 최대 처리량을 계산해보기로 했다. 초당 최대 처리량은 요청의 응답 완료 여부에 관계없이 임의 시간부터 1초(=1,000밀리초)간 처리하는 요청의 최대 개수를 의미한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;입력 형식&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;solution&lt;/code&gt; 함수에 전달되는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lines&lt;/code&gt; 배열은 N(1 ≦ N ≦ 2,000)개의 로그 문자열로 되어 있으며, 각 로그 문자열마다 요청에 대한 응답완료시간 S와 처리시간 T가 공백으로 구분되어 있다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;응답완료시간 &lt;strong&gt;S&lt;/strong&gt;는 작년 추석인 2016년 9월 15일만 포함하여 고정 길이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2016-09-15 hh:mm:ss.sss&lt;/code&gt; 형식으로 되어 있다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;처리시간 T는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0.1s&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0.312s&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2s&lt;/code&gt; 와 같이 최대 소수점 셋째 자리까지 기록하며 뒤에는 초 단위를 의미하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s&lt;/code&gt;로 끝난다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;예를 들어, 로그 문자열 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2016-09-15 03:10:33.020 0.011s&lt;/code&gt;은 2016년 9월 15일 오전 3시 10분 &lt;strong&gt;33.010초&lt;/strong&gt;부터 2016년 9월 15일 오전 3시 10분 &lt;strong&gt;33.020초&lt;/strong&gt;까지 &lt;strong&gt;0.011초&lt;/strong&gt; 동안 처리된 요청을 의미한다. (처리시간은 시작시간과 끝시간을 포함)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;서버에는 타임아웃이 3초로 적용되어 있기 때문에 처리시간은 &lt;strong&gt;0.001 ≦ T ≦ 3.000이다.&lt;/strong&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lines&lt;/code&gt; 배열은 응답완료시간 S를 기준으로 오름차순 정렬되어 있다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;출력 형식&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;solution&lt;/code&gt; 함수에서는 로그 데이터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lines&lt;/code&gt; 배열에 대해 &lt;strong&gt;초당 최대 처리량&lt;/strong&gt;을 리턴한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;입출력 예제&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;예제 1&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;입력: [&lt;br /&gt;
+2016-09-15 01:00:04.001 2.0s,&lt;br /&gt;
+2016-09-15 01:00:07.000 2s&lt;br /&gt;]&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;출력: 1&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;예제2&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;입력: [&lt;br /&gt;2016-09-15 01:00:04.002 2.0s&lt;br /&gt;,
+2016-09-15 01:00:07.000 2s&lt;br /&gt;]&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;출력: 2&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;설명: 처리시간은 시작시간과 끝시간을 포함하므로 첫 번째 로그는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01:00:02.003 ~ 01:00:04.002&lt;/code&gt;에서 2초 동안 처리되었으며, 두 번째 로그는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01:00:05.001 ~ 01:00:07.000&lt;/code&gt;에서 2초 동안 처리된다. 따라서, 첫 번째 로그가 끝나는 시점과 두 번째 로그가 시작하는 시점의 구간인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01:00:04.002 ~ 01:00:05.001&lt;/code&gt; 1초 동안 최대 2개가 된다.&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;예제3&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;입력: [&lt;br /&gt;
+2016-09-15 20:59:57.421 0.351s,&lt;br /&gt;
+2016-09-15 20:59:58.233 1.181s,&lt;br /&gt;
+2016-09-15 20:59:58.299 0.8s,&lt;br /&gt;
+2016-09-15 20:59:58.688 1.041s,&lt;br /&gt;
+2016-09-15 20:59:59.591 1.412s,&lt;br /&gt;
+2016-09-15 21:00:00.464 1.466s,&lt;br /&gt;
+2016-09-15 21:00:00.741 1.581s,&lt;br /&gt;
+2016-09-15 21:00:00.748 2.31s,&lt;br /&gt;
+2016-09-15 21:00:00.966 0.381s,&lt;br /&gt;
+2016-09-15 21:00:02.066 2.62s&lt;br /&gt;
+]&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;출력: 7&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;설명: 아래 타임라인 그림에서 빨간색으로 표시된 1초 각 구간의 처리량을 구해보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(1)&lt;/code&gt;은 4개, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(2)&lt;/code&gt;는 7개, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(3)&lt;/code&gt;는 2개임을 알 수 있다. 따라서 초당 최대 처리량은 7이 되며, 동일한 최대 처리량을 갖는 1초 구간은 여러 개 존재할 수 있으므로 이 문제에서는 구간이 아닌 개수만 출력한다.&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104436182-a1bcde00-55d0-11eb-8c43-c2578688536c.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;풀이&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;접근 방법&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;결국 초당 몇 개의 작업을 수행하는 지에 대한 count 중 최댓값을 구하는 것&lt;/li&gt;
+      &lt;li&gt;초당 작업의 수행 수가 변화는 시점에대한 비교를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;작업이 끝날 때&lt;/code&gt; 해주면 된다.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;우선 로그에서 날짜 부분을 떼어내고, 끝나는 시간과 작업시간으로 시작시간을 계산한다.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;계산 이후 시간을 동일시한다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ms&lt;/code&gt; 단위로 동일하게 바꾸어주었다.&lt;/p&gt;
+
+        &lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# 1,2의 접근방법에 대한 부분코드
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;end_time_split&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;':'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;end_time_to_mil&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_time_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_time_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_time_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;start_time_to_mil&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end_time_to_mil&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;time_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_time_to_mil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_time_to_mil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;이후 시간순으로 정렬을 한다&lt;/p&gt;
+
+        &lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;time_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;끝나는 시간에 999ms를 더한다(끝난 시점부터 999ms초 까지는 그 구간에서 유효한 동시작업이라고 인정되기 때문). &lt;br /&gt;이후 끝나는 시간과 999ms를 더한 시간 구간에 대해서 time_list를 비교하여 work_count를 센 후 max count를 반환한다.&lt;/p&gt;
+
+        &lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;work_count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;999&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;work_count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;work_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;work_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;전체 코드&lt;/p&gt;
+
+    &lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;time_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;end_time_split&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;':'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;end_time_to_mil&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_time_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_time_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_time_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;start_time_to_mil&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end_time_to_mil&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;time_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start_time_to_mil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_time_to_mil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;time_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;work_count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;999&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;n&quot;&gt;work_count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;work_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;work_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Programmers" /><category term="algorithm" /><summary type="html">추석 트래픽</summary></entry><entry><title type="html">CentOS 7 user 생성과 sudoer</title><link href="https://closetotheworld.github.io/linux/centos-user-config/" rel="alternate" type="text/html" title="CentOS 7 user 생성과 sudoer" /><published>2021-01-12T00:00:00+09:00</published><updated>2021-01-13T04:50:00+09:00</updated><id>https://closetotheworld.github.io/linux/centos-user-config</id><content type="html" xml:base="https://closetotheworld.github.io/linux/centos-user-config/">&lt;h3 id=&quot;wheel과-sudoer&quot;&gt;wheel과 sudoer&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -61,7 +238,12 @@
 
     &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/37994634/104313802-eaff2600-551b-11eb-9063-f78a60e7c169.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="linux" /><category term="CentOS7" /><summary type="html">wheel과 sudoer</summary></entry><entry><title type="html">VCNC 코딩테스트 후기</title><link href="https://closetotheworld.github.io/reviews/vcnc-coding-test-review/" rel="alternate" type="text/html" title="VCNC 코딩테스트 후기" /><published>2021-01-11T00:00:00+09:00</published><updated>2021-01-12T06:40:00+09:00</updated><id>https://closetotheworld.github.io/reviews/vcnc-coding-test-review</id><content type="html" xml:base="https://closetotheworld.github.io/reviews/vcnc-coding-test-review/">&lt;h3 id=&quot;vcnc&quot;&gt;VCNC?&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="linux" /><category term="CentOS7" /><summary type="html">wheel과 sudoer</summary></entry><entry><title type="html">docker 시작 시 참고 사이트</title><link href="https://closetotheworld.github.io/docker/docker-sites/" rel="alternate" type="text/html" title="docker 시작 시 참고 사이트" /><published>2021-01-12T00:00:00+09:00</published><updated>2021-01-13T07:25:00+09:00</updated><id>https://closetotheworld.github.io/docker/docker-sites</id><content type="html" xml:base="https://closetotheworld.github.io/docker/docker-sites/">&lt;h3 id=&quot;시작할-때-보면-좋은-사이트&quot;&gt;시작할 때 보면 좋은 사이트&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.44bits.io/ko/post/easy-deploy-with-docker&quot;&gt;1번 사이트&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.44bits.io/ko/post/almost-perfect-development-environment-with-docker-and-docker-compose&quot;&gt;2번 사이트&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://subicura.com/2016/06/07/zero-downtime-docker-deployment.html&quot;&gt;3번 사이트(subicura님)(도커 무중단 배포하기)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://subicura.com/2019/05/19/kubernetes-basic-1.html&quot;&gt;4번 사이트(subicura님)(쿠버네티스 시작하기)&lt;/a&gt;&lt;/p&gt;</content><author><name>Wonryang Heo</name></author><category term="Docker" /><category term="container" /><category term="MSA" /><summary type="html">시작할 때 보면 좋은 사이트</summary></entry><entry><title type="html">VCNC 코딩테스트 후기</title><link href="https://closetotheworld.github.io/reviews/vcnc-coding-test-review/" rel="alternate" type="text/html" title="VCNC 코딩테스트 후기" /><published>2021-01-11T00:00:00+09:00</published><updated>2021-01-12T06:40:00+09:00</updated><id>https://closetotheworld.github.io/reviews/vcnc-coding-test-review</id><content type="html" xml:base="https://closetotheworld.github.io/reviews/vcnc-coding-test-review/">&lt;h3 id=&quot;vcnc&quot;&gt;VCNC?&lt;/h3&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;타다, 비트윈을 만든 회사!&lt;/p&gt;
@@ -345,55 +527,4 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; 이라는 패키지에 구현되어있다.&lt;/li&gt;
   &lt;li&gt;Go의 모든 코드는 패키지에 종속되어야 한다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Golang" /><category term="language" /><category term="tutorial" /><summary type="html">학습 한 내용</summary></entry><entry><title type="html">2021-01-07</title><link href="https://closetotheworld.github.io/daily/210107-diary/" rel="alternate" type="text/html" title="2021-01-07" /><published>2021-01-07T00:00:00+09:00</published><updated>2021-01-08T06:00:00+09:00</updated><id>https://closetotheworld.github.io/daily/210107-diary</id><content type="html" xml:base="https://closetotheworld.github.io/daily/210107-diary/">&lt;h2 id=&quot;집에-오니-너무-편하당&quot;&gt;집에 오니 너무 편하당&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;일단 잘 먹는다&lt;/li&gt;
-  &lt;li&gt;부모님 얼굴 매일보니 좋다&lt;/li&gt;
-  &lt;li&gt;평화롭다&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;study&quot;&gt;study&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Golang 실습코드 만드느라 포스팅은 몰아서 해야겠다&lt;/li&gt;
-  &lt;li&gt;CS공부한것도 하나씩 올려야지&lt;/li&gt;
-  &lt;li&gt;아무래도 본가에 와서 노트북만 들고 하려니 더블모니터가 그리워잇&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;오늘도 고생했다!&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">집에 오니 너무 편하당</summary></entry><entry><title type="html">2021-01-06</title><link href="https://closetotheworld.github.io/daily/210106-diary/" rel="alternate" type="text/html" title="2021-01-06" /><published>2021-01-06T00:00:00+09:00</published><updated>2021-01-07T06:40:00+09:00</updated><id>https://closetotheworld.github.io/daily/210106-diary</id><content type="html" xml:base="https://closetotheworld.github.io/daily/210106-diary/">&lt;h2 id=&quot;오랜만에-집을-왔다&quot;&gt;오랜만에 집을 왔다&lt;/h2&gt;
-
-&lt;p&gt;얼마만에 집을 온건지, 추석 이후로 오랜만에 본가에 왔다.&lt;br /&gt;
-가족들의 얼굴을 오랜만에 보니 너무 좋다.&lt;br /&gt;
-작년 하반기에는 취업준비니 개인 프로젝트니 공부니 나 자신을 너무 채찍질 했던 것 같다.&lt;br /&gt;
-그래도 주변 사람과 가족은 챙기면서 살아야지.&lt;/p&gt;
-
-&lt;h2 id=&quot;다잡은-목표&quot;&gt;다잡은 목표&lt;/h2&gt;
-
-&lt;p&gt;취업준비를 열심히 하되 나를 놓지말자.&lt;br /&gt;
-내가 좋아하는 것, 옷이나 클래식음악 등등 쉴 때는 잘 쉬자&lt;br /&gt;
-나를 너무 몰아세우지 말자&lt;br /&gt;
-열심히 하면 언제든 될 거야&lt;br /&gt;
-간단한 목표&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;1일 1커밋 하기(포스트만 하루에 잘 써도 가능할 것 같다.)&lt;/li&gt;
-    &lt;li&gt;공부를 하더라도 원리 꼭 되짚고 가기&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;나를 너무 몰아세우지 않기&lt;/strong&gt;&lt;/li&gt;
-    &lt;li&gt;가족들의 안부 자주 묻기&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;올해도-화이팅&quot;&gt;올해도 화이팅&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;목표들&lt;/code&gt;을 잃지 않고!&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자신감&lt;/code&gt;을 가지고&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;꿈&lt;/code&gt;을 향해&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;나&lt;/code&gt;를 잊지 않기&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;주변사람&lt;/code&gt; 챙기기&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">오랜만에 집을 왔다</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Golang" /><category term="language" /><category term="tutorial" /><summary type="html">학습 한 내용</summary></entry></feed>

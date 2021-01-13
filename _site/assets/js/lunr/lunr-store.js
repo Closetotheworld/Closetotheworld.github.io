@@ -76,4 +76,16 @@ var store = [{
         "tags": ["CentOS7"],
         "url": "https://closetotheworld.github.io/linux/centos-user-config/",
         "teaser": null
+      },{
+        "title": "docker 시작 시 참고 사이트",
+        "excerpt":"시작할 때 보면 좋은 사이트   1번 사이트  2번 사이트  3번 사이트(subicura님)(도커 무중단 배포하기)  4번 사이트(subicura님)(쿠버네티스 시작하기)  ","categories": ["Docker"],
+        "tags": ["container","MSA"],
+        "url": "https://closetotheworld.github.io/docker/docker-sites/",
+        "teaser": null
+      },{
+        "title": "Programmers level-3 (kakao 2018 추석트래픽)",
+        "excerpt":"추석 트래픽 문제 이번 추석에도 시스템 장애가 없는 명절을 보내고 싶은 어피치는 서버를 증설해야 할지 고민이다. 장애 대비용 서버 증설 여부를 결정하기 위해 작년 추석 기간인 9월 15일 로그 데이터를 분석한 후 초당 최대 처리량을 계산해보기로 했다. 초당 최대 처리량은 요청의 응답 완료 여부에 관계없이 임의 시간부터 1초(=1,000밀리초)간 처리하는 요청의...","categories": ["Programmers"],
+        "tags": ["algorithm"],
+        "url": "https://closetotheworld.github.io/programmers/programmers-kakao-2018-thanksgiving/",
+        "teaser": null
       }]
