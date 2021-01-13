@@ -88,4 +88,10 @@ var store = [{
         "tags": ["algorithm"],
         "url": "https://closetotheworld.github.io/programmers/programmers-kakao-2018-thanksgiving/",
         "teaser": null
+      },{
+        "title": "D O C K E R ? ",
+        "excerpt":"도커? 컨테이너 안에 있는 애플리케이션 배포를 자동화하는 오픈소스 엔진 가상화된 컨테이너 실행 환경 위에 애플리케이션 배포엔진을 추가한다. 도커의 목적 도커는 빠르다. 몇 분 만에 애플리케이션을 도커화 할 수 있음 의무의 논리적 분리 컨테이너 내부에서 동작하는 애플리케이션만 집중할 수 있음. 개발자가 코드를 작성할 때의 환경과 배포 실행 환경을 보장하여 일관성을 향상시킨다....","categories": ["Docker"],
+        "tags": ["container","MSA"],
+        "url": "https://closetotheworld.github.io/docker/docker-start/",
+        "teaser": null
       }]

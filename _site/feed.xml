@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-13T19:05:46+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">Programmers level-3 (kakao 2018 추석트래픽)</title><link href="https://closetotheworld.github.io/programmers/programmers-kakao-2018-thanksgiving/" rel="alternate" type="text/html" title="Programmers level-3 (kakao 2018 추석트래픽)" /><published>2021-01-13T00:00:00+09:00</published><updated>2021-01-14T03:40:00+09:00</updated><id>https://closetotheworld.github.io/programmers/programmers-kakao-2018-thanksgiving</id><content type="html" xml:base="https://closetotheworld.github.io/programmers/programmers-kakao-2018-thanksgiving/">&lt;h2 id=&quot;추석-트래픽&quot;&gt;추석 트래픽&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://closetotheworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://closetotheworld.github.io/" rel="alternate" type="text/html" /><updated>2021-01-14T01:22:03+09:00</updated><id>https://closetotheworld.github.io/feed.xml</id><title type="html">closetotheworld’s devlog</title><subtitle>I want close to the world on tech :)</subtitle><author><name>Wonryang Heo</name></author><entry><title type="html">Programmers level-3 (kakao 2018 추석트래픽)</title><link href="https://closetotheworld.github.io/programmers/programmers-kakao-2018-thanksgiving/" rel="alternate" type="text/html" title="Programmers level-3 (kakao 2018 추석트래픽)" /><published>2021-01-13T00:00:00+09:00</published><updated>2021-01-14T03:40:00+09:00</updated><id>https://closetotheworld.github.io/programmers/programmers-kakao-2018-thanksgiving</id><content type="html" xml:base="https://closetotheworld.github.io/programmers/programmers-kakao-2018-thanksgiving/">&lt;h2 id=&quot;추석-트래픽&quot;&gt;추석 트래픽&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -175,7 +175,155 @@
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Programmers" /><category term="algorithm" /><summary type="html">추석 트래픽</summary></entry><entry><title type="html">CentOS 7 user 생성과 sudoer</title><link href="https://closetotheworld.github.io/linux/centos-user-config/" rel="alternate" type="text/html" title="CentOS 7 user 생성과 sudoer" /><published>2021-01-12T00:00:00+09:00</published><updated>2021-01-13T04:50:00+09:00</updated><id>https://closetotheworld.github.io/linux/centos-user-config</id><content type="html" xml:base="https://closetotheworld.github.io/linux/centos-user-config/">&lt;h3 id=&quot;wheel과-sudoer&quot;&gt;wheel과 sudoer&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Programmers" /><category term="algorithm" /><summary type="html">추석 트래픽</summary></entry><entry><title type="html">D O C K E R ?</title><link href="https://closetotheworld.github.io/docker/docker-start/" rel="alternate" type="text/html" title="D O C K E R ?" /><published>2021-01-13T00:00:00+09:00</published><updated>2021-01-13T07:25:00+09:00</updated><id>https://closetotheworld.github.io/docker/docker-start</id><content type="html" xml:base="https://closetotheworld.github.io/docker/docker-start/">&lt;h2 id=&quot;도커&quot;&gt;도커?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;컨테이너 안에 있는 애플리케이션 배포를 자동화하는 오픈소스 엔진&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;가상화된 컨테이너 실행 환경 위에 애플리케이션 배포엔진을 추가한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;도커의 목적
+    &lt;ul&gt;
+      &lt;li&gt;도커는 빠르다.
+        &lt;ul&gt;
+          &lt;li&gt;몇 분 만에 애플리케이션을 도커화 할 수 있음&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;의무의 논리적 분리
+        &lt;ul&gt;
+          &lt;li&gt;컨테이너 내부에서 동작하는 애플리케이션만 집중할 수 있음.&lt;/li&gt;
+          &lt;li&gt;개발자가 코드를 작성할 때의 환경과 배포 실행 환경을 보장하여 일관성을 향상시킨다.
+            &lt;ul&gt;
+              &lt;li&gt;ex: “개발할 땐 잘됐는데 배포때 안돼!!” 를 방지!&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;빠르고 효율적 개발사이클
+        &lt;ul&gt;
+          &lt;li&gt;도커의 사용목적은 코드작성, 테스트, 배포까지의 시간을 줄이는 데에 있기 때문이다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;도커-컴포넌트&quot;&gt;도커 컴포넌트&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;도커 클라이언트와 서버
+    &lt;ul&gt;
+      &lt;li&gt;도커는 클라이언트 - 서버 애플리케이션이다.&lt;/li&gt;
+      &lt;li&gt;docker과 api로 이루어 져 있는데, 클라이언트에서 api를 통해 서버에 명령을 전달한다.&lt;/li&gt;
+      &lt;li&gt;마치 직접 명령하는 것 처럼 보인다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;도커 이미지&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;이미지에서 컨테이너를 만드는데, 이는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;빌드&lt;/code&gt; 에 해당한다.&lt;/li&gt;
+      &lt;li&gt;여러 레이어가 나뉜 형태이며 유니온 파일 시스템을 사용함.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;도커 레지스트리&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;도커는 커스텀 이미지를 레지스트리에 저장한다.
+        &lt;ul&gt;
+          &lt;li&gt;public registry : 도커 허브&lt;/li&gt;
+          &lt;li&gt;private registry : 나중에 알아보자..&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;컨테이너
+    &lt;ul&gt;
+      &lt;li&gt;이미지에서 실행이 되는 단위&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;도커-설치&quot;&gt;도커 설치&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;정식 릴리즈 된 도커의 최신 버전을 다운받는다!&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; https://get.docker.com | &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;도커는 기본적으로 root 권한이 필요합니다! 사용하는 사용자를 docker 그룹에 추가해줍시다!
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;usermod &lt;span class=&quot;nt&quot;&gt;-aG&lt;/span&gt; docker &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 현재 접속 중인 사용자에게 원한을 준다&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;usermod &lt;span class=&quot;nt&quot;&gt;-aG&lt;/span&gt; docker user &lt;span class=&quot;c&quot;&gt;# user 사용자에게 권한주기&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;서비스가 끝나면 정상설치가 되었는지 확인 해 봅니다.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;도커의-기본-명령어들&quot;&gt;도커의 기본 명령어들&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;도커를 실행하는 명령어는 다음과 같습니다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;OPTIONS] IMAGE[:TAG|@DIGEST] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;COMMAND] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ARG...]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;다음은 run 시에 자주 사용하는 옵션입니다.&lt;/p&gt;
+
+        &lt;table&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th style=&quot;text-align: center&quot;&gt;옵션&lt;/th&gt;
+              &lt;th style=&quot;text-align: center&quot;&gt;설명&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;-d&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;detached mode. 백그라운드모드를 의미&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;-p&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;호스트와 컨테이너의 포트를 연결(포워딩)&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;-v&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;호스트와 컨테이너의 디렉토리를 연결(마운트)(볼륨)&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;-e&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;컨테이너 내에서 사용할 환경변수를 설정함.&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;-name&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;컨테이너의 이름을 설정&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;-rm&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;컨테이너의 프로세스가 종료될 시 자동제거&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;-it&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;터미널 키보드 system.in 옵션&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;-link&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;컨테이너를 연결한다 ([컨테이너명:별칭])&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Docker" /><category term="container" /><category term="MSA" /><summary type="html">도커?</summary></entry><entry><title type="html">CentOS 7 user 생성과 sudoer</title><link href="https://closetotheworld.github.io/linux/centos-user-config/" rel="alternate" type="text/html" title="CentOS 7 user 생성과 sudoer" /><published>2021-01-12T00:00:00+09:00</published><updated>2021-01-13T04:50:00+09:00</updated><id>https://closetotheworld.github.io/linux/centos-user-config</id><content type="html" xml:base="https://closetotheworld.github.io/linux/centos-user-config/">&lt;h3 id=&quot;wheel과-sudoer&quot;&gt;wheel과 sudoer&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -492,39 +640,4 @@
   &lt;li&gt;다시 가서 열심히 포스트하고 열심히 공부하고&lt;/li&gt;
   &lt;li&gt;얼마 남지않은 연구실에서의 공부 야무지게 끝내자잇&lt;/li&gt;
   &lt;li&gt;오늘도 고생했따!&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">오늘 먹은 것</summary></entry><entry><title type="html">Golang, 간단히 살펴보자!- Go series(2)</title><link href="https://closetotheworld.github.io/golang/go_series_2/" rel="alternate" type="text/html" title="Golang, 간단히 살펴보자!- Go series(2)" /><published>2021-01-08T00:00:00+09:00</published><updated>2021-01-09T06:50:00+09:00</updated><id>https://closetotheworld.github.io/golang/go_series_2</id><content type="html" xml:base="https://closetotheworld.github.io/golang/go_series_2/">&lt;p&gt;&lt;strong&gt;학습 한 내용&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Go의 흐름&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;golang의-실행흐름&quot;&gt;Golang의 실행흐름&lt;/h3&gt;
-
-&lt;p&gt;Golang의 실행흐름을 알아보자&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.go&lt;/code&gt; 에서 보통 시작한다.&lt;/p&gt;
-
-    &lt;div class=&quot;language-golang highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;go&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;log&quot;&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;os&quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setOutput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Stdout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wonryang&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; 이라는 패키지에 구현되어있다.&lt;/li&gt;
-  &lt;li&gt;Go의 모든 코드는 패키지에 종속되어야 한다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="Golang" /><category term="language" /><category term="tutorial" /><summary type="html">학습 한 내용</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Wonryang Heo</name></author><category term="daily" /><category term="diary" /><summary type="html">오늘 먹은 것</summary></entry></feed>
