@@ -1,10 +1,10 @@
 ---
-title: "Programmers level-3 (네트워크)"
+title: "Programmers level-3 (입국심사)"
 
 categories:
   - Programmers
 tags:
-  - [algorithm, DFS]
+  - [algorithm, BinarySearch]
 
 toc: true
 toc_sticky: true
