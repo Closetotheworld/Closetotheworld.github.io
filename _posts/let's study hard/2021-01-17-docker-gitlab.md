@@ -53,12 +53,11 @@ Gitlab을 사용하는 이유는 다음과 같다.
            - '/{your_work_directory}/gitlab_storage/data:/var/opt/gitlab'
    ```
 
-   image는 끌어온 gitlab 이미지
-   restart는 재시작 되었을때 다시 컨테이너를 실행 할 것인지 여부
-   environment에서 external은 domain에 대한 요청을 받기 위함이며
-   포트는 이 전 게시물에서 nginx로 reverse proxy를 사용한다고 했기에 다른 포트에서 다시 80, 443, 22로 이어주었다.
-   volume은 추후 저장소 확장에 대비하여 작업 디렉토리에 바인드 마운트로 하였다.
-   <br>
+   image는 끌어온 gitlab 이미지  
+   restart는 재시작 되었을때 다시 컨테이너를 실행 할 것인지 여부  
+   environment에서 external은 domain에 대한 요청을 받기 위함이며  
+   포트는 이 전 게시물에서 nginx로 reverse proxy를 사용한다고 했기에 다른 포트에서 다시 80, 443, 22로 이어주었다.  
+   volume은 추후 저장소 확장에 대비하여 작업 디렉토리에 바인드 마운트로 하였다.  
 
 3. 위와 같이 생성이 된다면, 두 가지의 방법이 생긴다.
 
