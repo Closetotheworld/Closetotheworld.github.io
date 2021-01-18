@@ -12,7 +12,7 @@ toc_sticky: true
 last_modified_at: 2021-01-18T21:38:00
 ---
 
-### 문제
+## 문제
 
 스트리밍 사이트에서 장르 별로 가장 많이 재생된 노래를 두 개씩 모아 베스트 앨범을 출시하려 합니다. 노래는 고유 번호로 구분하며, 노래를 수록하는 기준은 다음과 같습니다.
 
@@ -40,14 +40,15 @@ last_modified_at: 2021-01-18T21:38:00
     classic 장르는 1,450회 재생되었으며, classic 노래는 다음과 같습니다.
     - 고유 번호 3: 800회 재생
     - 고유 번호 0: 500회 재생
-    - 고유 번호 2: 150회 재생
+    - 고유 번호 2: 150회 재생  
+
     pop 장르는 3,100회 재생되었으며, pop 노래는 다음과 같습니다.
 
     - 고유 번호 4: 2,500회 재생
     - 고유 번호 1: 600회 재생
     따라서 pop 장르의 [4, 1]번 노래를 먼저, classic 장르의 [3, 0]번 노래를 그다음에 수록합니다.
-    
-### 코드
+
+## 코드
 
 - 문제 접근
     1. 장르별 최대 재생수를 접근해야함
@@ -56,30 +57,30 @@ last_modified_at: 2021-01-18T21:38:00
         - 장르 안에서 고유번호 : 재생수의 자료구조로 저장
     3. 재생횟수가 같다면, 고유번호가 낮아야하므로 정렬 후 answer에 추가.
 
-```py
-import collections
+    ```py
+    import collections
 
-def solution(genres, plays):
-    answer = []
+    def solution(genres, plays):
+        answer = []
 
-    # step 1. 장르 별 접근수와 장르 안 TOP 1,2 저장하는 자료구조.
-    genre_play_dict = collections.defaultdict(dict)
-    score_genre = collections.defaultdict(int)
+        # step 1. 장르 별 접근수와 장르 안 TOP 1,2 저장하는 자료구조.
+        genre_play_dict = collections.defaultdict(dict)
+        score_genre = collections.defaultdict(int)
 
-    # step 2. 장르 별 접근수와 장르 안 고유번호:재생수 저장.
-    for i, (g, p) in enumerate(zip(genres,plays)):
-        genre_play_dict[g][i] = p 
-        score_genre[g]+=p
-    
-    # step 3. 최대재생된 장르를 알기 위해 정렬.
-    score_genre = sorted(score_genre.items(), key= lambda x: x[1], reverse=True)
+        # step 2. 장르 별 접근수와 장르 안 고유번호:재생수 저장.
+        for i, (g, p) in enumerate(zip(genres,plays)):
+            genre_play_dict[g][i] = p 
+            score_genre[g]+=p
+        
+        # step 3. 최대재생된 장르를 알기 위해 정렬.
+        score_genre = sorted(score_genre.items(), key= lambda x: x[1], reverse=True)
 
-    # step 4. 최대 재생된 장르부터 순서대로 장르 안 TOP 1,2를 answer에 추가. 길이가 1일 시에는 한 곡만 추가하게 된다.
-    for score in score_genre:
-        res = sorted(genre_play_dict[score[0]].items(), key= lambda x: x[1], reverse=True)
-        answer.append(res[0][0])
-        if len(res) > 1:
-            answer.append(res[1][0])
+        # step 4. 최대 재생된 장르부터 순서대로 장르 안 TOP 1,2를 answer에 추가. 길이가 1일 시에는 한 곡만 추가하게 된다.
+        for score in score_genre:
+            res = sorted(genre_play_dict[score[0]].items(), key= lambda x: x[1], reverse=True)
+            answer.append(res[0][0])
+            if len(res) > 1:
+                answer.append(res[1][0])
 
-    return answer
-```
+        return answer
+    ```
