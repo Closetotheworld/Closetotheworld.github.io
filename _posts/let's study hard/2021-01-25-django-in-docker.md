@@ -2,7 +2,7 @@
 title: "django를 postgre와 docker을 이용해서 구동하자 "
 
 categories:
-  - docker
+  - Docker
 tags:
   - [python, django, framework, tutorial]
 
