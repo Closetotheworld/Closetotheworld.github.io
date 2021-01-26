@@ -42,7 +42,7 @@
                         <li><a href="/categories/network" class="">network ({{category[1].size}})</a></li>
                     {% endif %}
                     {% if category[0] == "OS" %}
-                        <li><a href="/categories/os" class="">network ({{category[1].size}})</a></li>
+                        <li><a href="/categories/os" class="">Operating System({{category[1].size}})</a></li>
                     {% endif %}
                     {% if category[0] == "Database" %}
                         <li><a href="/categories/database" class="">network ({{category[1].size}})</a></li>
