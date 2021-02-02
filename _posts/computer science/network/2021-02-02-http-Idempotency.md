@@ -4,7 +4,7 @@ title: "HTTP 메소드의 멱등성이란?"
 categories:
   - Network
 tags:
-  - [CS, interview]
+  - [CS, REST, HTTP, interview]
 
 toc: true
 toc_sticky: true
