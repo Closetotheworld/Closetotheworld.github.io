@@ -1,5 +1,5 @@
 ---
-title: "Pythonic1 (1) - 버전,/ PEP8, /bytes, unicode, str 차이점/ - python series 1"
+title: "Pythonic 1 (버전, PEP8 그리고 bytes, unicode, str 차이) - python series 1"
 
 categories:
   - Python
