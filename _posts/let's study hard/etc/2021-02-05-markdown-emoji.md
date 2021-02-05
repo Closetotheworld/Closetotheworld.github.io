@@ -4,7 +4,7 @@ title: "markdown 쓰기 좋은 emoji 정리"
 categories:
   - etc
 tags:
-  - [github, git, command]
+  - [emoji, markdown]
 
 toc: true
 # toc_sticky: true
